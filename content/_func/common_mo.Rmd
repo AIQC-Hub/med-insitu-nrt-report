@@ -17,8 +17,8 @@ rsc_dir <- "../../data/nrt_mo"
 df_filtered_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_filtered_name, ".rds"))
 
 # Data frame
-ar_file_name <- file.path(rsc_dir, parquet)
-df_ar <- read_parquet(ar_file_name)
+mo_file_name <- file.path(rsc_dir, parquet)
+df_mo <- read_parquet(mo_file_name)
 
 # Time spans
 time_span1 <- "ts7989"
