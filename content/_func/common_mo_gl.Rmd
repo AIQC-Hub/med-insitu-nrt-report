@@ -12,8 +12,8 @@ df_name <- "df_mo"
 df_filtered_name <- "df_mo_gl_filtered"
 
 # Path
-rsc_dir <- "../../data/nrt_ar"
-#rsc_dir <- "../data/nrt_ar"
+rsc_dir <- "../../data/nrt_mo"
+#rsc_dir <- "../data/nrt_mo"
 df_filtered_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_filtered_name, ".rds"))
 
 # Data frame
