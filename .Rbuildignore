@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+DESCRIPTION
+CHANGELOG.md
+README.md
+LICENSE
