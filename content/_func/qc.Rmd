@@ -18,77 +18,97 @@ get_flag_def <- function() {
 }
 
 get_flag_counts <- function(df, var) {
-  flag_counts <- df %>% mutate(x = {{ var }}) %>%
-    count(x) %>% mutate(x = as.character(x))
+  flag_counts <- df %>%
+    select(platform_code, profile_no2, starts_with(var)) %>%
+    pivot_longer(
+      cols = starts_with(var),
+      names_to = "Code",
+      names_prefix = paste0(var, "_"),
+      values_to = "profile_n"
+    ) %>%
+    group_by(Code) %>%
+    summarise(n = sum(profile_n)) %>%
+    select(Code, n)
 
   get_flag_def() %>%
-    left_join(flag_counts, by=c(Code = "x")) %>%
+    left_join(flag_counts, by="Code") %>%
     mutate(n = ifelse(is.na(n), 0, n),
            `Relative Frequency (%)` = scales::percent(n / sum(n), accuracy = 0.1),
            n = comma(n))
 }
 
-
-qc_summary_1 <- function(df, var_x) {
-  df_counts <- df %>%
-    group_by(platform_code, {{var_x}}) %>%
-    summarise(n = n()) %>%
-    ungroup() %>%
-    complete(platform_code, {{var_x}}, fill = list(count = 0)) %>%
-    mutate(n = ifelse(is.na(n), 0, n)) %>%
-    pivot_wider(names_from = {{var_x}}, values_from = n)
-
+qc_summary_1 <- function(df, var) {
   df %>%
-    group_by(platform_code) %>% summarise(n = n()) %>%
-    left_join(df_counts, by="platform_code")
+    select(platform_code, profile_no2, starts_with(var)) %>%
+    pivot_longer(
+      cols = starts_with(var),
+      names_to = "Code",
+      names_prefix = paste0(var, "_"),
+      values_to = "profile_n"
+    ) %>%
+    group_by(platform_code, Code) %>%
+    summarise(n = sum(profile_n)) %>%
+    ungroup() %>%
+    complete(platform_code, Code, fill = list(count = 0)) %>%
+    mutate(n = ifelse(is.na(n), 0, n)) %>%
+    pivot_wider(names_from = Code, values_from = n) %>%
+    select(where(~ !all(.x == 0)))
 }
 
 format_qc_summary_1 <- function(df) {
   df %>%
-    rename(`Platform` = platform_code, `# Observations` = n)
+    rename(`Platform` = platform_code)
 }
 
-qc_summary_2 <- function(df, var_x) {
-  df_counts <- df %>%
-    group_by(platform_code, profile_no, {{var_x}}) %>%
-    summarise(n = n()) %>%
+qc_summary_time <- function(df, var) {
+  df %>%
+    select(platform_code, profile_no2, x, starts_with(var)) %>%
+    pivot_longer(
+      cols = starts_with(var),
+      names_to = "Code",
+      names_prefix = paste0(var, "_"),
+      values_to = "profile_n"
+    ) %>%
+    group_by(x, Code) %>%
+    summarise(n = sum(profile_n)) %>%
     ungroup() %>%
-    complete(platform_code, profile_no, {{var_x}}, fill = list(count = 0)) %>%
+    complete(x, Code, fill = list(count = 0)) %>%
     mutate(n = ifelse(is.na(n), 0, n)) %>%
-    pivot_wider(names_from = {{var_x}}, values_from = n)
-
-  df %>%
-    group_by(platform_code, profile_no) %>% summarise(n = n()) %>%
-    left_join(df_counts, by=c("platform_code", "profile_no"))
+    pivot_wider(names_from = Code, values_from = n) %>%
+    select(where(~ !all(.x == 0)))
 }
 
-format_qc_summary_2 <- function(df) {
+qc4_proportion <- function(df, var_x) {
+  col_count <- sym(paste0(var_x, "_count"))
+  col_qc4 <- sym(paste0(var_x, "_qc_4"))
+
   df %>%
-    rename(`Platform code` = platform_code, `Profile` = profile_no, `# Obs` = n)
+    select(platform_code,
+           profile_timestamp,
+           profile_no2,
+           n = !!col_count,
+           qc4_x = !!col_qc4) %>%
+    mutate(qc4_prop = qc4_x / n)
 }
 
-qc_summary_time <- function(df, var_x) {
-  df_counts <- df %>%
-    group_by(x, {{var_x}}) %>%
-    summarise(n = n()) %>%
-    ungroup() %>%
-    complete(x, {{var_x}}, fill = list(count = 0)) %>%
-    mutate(n = ifelse(is.na(n), 0, n)) %>%
-    pivot_wider(names_from = {{var_x}}, values_from = n)
-
-  df %>%
-    group_by(x) %>% summarise(n = n()) %>%
-    left_join(df_counts, by=c("x"))
+create_qc4_density <- function(df, main_title) {
+  ggplot(df, aes(x=qc4_prop)) +
+    geom_density(alpha=0.25, size = 0.25)  +
+    labs(x = "proportion of QC 4",
+         y = "density") +
+    theme_pubr(base_size = 12) +
+    ggtitle(main_title) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
 }
 
 format_qc_summary_year <- function(df) {
   df %>%
-    rename(`Year` = x, `# Obs` = n)
+    rename(`Year` = x)
 }
 
 format_qc_summary_month <- function(df) {
   df %>%
-    rename(`Month` = x, `# Obs` = n)
+    rename(`Month` = x)
 }
 
 ```

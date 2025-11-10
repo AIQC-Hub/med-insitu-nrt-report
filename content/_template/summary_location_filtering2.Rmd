@@ -34,25 +34,20 @@ p_loc_filter1 <- summary_table_filtered1 %>%
 
 print(plot_grid(p_loc_original, p_loc_filter1, nrow = 2))
 
-rm(p_loc_original)
-rm(p_loc_filter1)
-
 ```
 
 ### Counts of the original data
 
- - **Number of observations**: `r formatC(nrow({{df}}), big.mark=",")`
  - **Number of platform**: `r formatC(nrow(summary_table_original_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_original_2$profile_count), big.mark=",")`
+ - **Number of observations**: `r formatC(sum(summary_table_original_2$obs_count), big.mark=",")`
 
 ### Counts after filtering
 
- - **Number of observations**: `r formatC(nrow({{df_filtered}}), big.mark=",")`
  - **Number of platform**: `r formatC(nrow(summary_table_filtered1_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_filtered1_2$profile_count), big.mark=",")`
+ - **Number of observations**: `r formatC(sum(summary_table_filtered1_2$obs_count), big.mark=",")`
 
 ```{r, t_summary_loc_filter3, echo = FALSE, message = FALSE, warning = FALSE}
-
-rm({{df}})
 
 ```
