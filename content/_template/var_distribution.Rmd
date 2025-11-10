@@ -1,6 +1,6 @@
 ```{r, t_var_dist1, echo = FALSE, message = FALSE, warning = FALSE, results = 'asis'}
 
-summary_table_var3 <- var_summary_3(df_filtered, {{var}})
+summary_table_var3 <- var_summary_2(df_filtered, "{{var}}")
 
 df_year <- summary_table_var3 %>%
   mutate(x = format(profile_timestamp, "%Y"))

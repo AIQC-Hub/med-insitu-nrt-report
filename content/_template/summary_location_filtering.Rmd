@@ -41,29 +41,25 @@ p_loc_filter2 <- summary_table_filtered2 %>%
 print(plot_grid(p_loc_original,
                 plot_grid(p_loc_filter1, p_loc_filter2, nrow = 1), nrow = 2))
 
-rm(p_loc_original)
-rm(p_loc_filter1)
-rm(p_loc_filter2)
-
 ```
 
 ### Counts of the original data
 
- - **Number of observations**: `r formatC(nrow({{df}}), big.mark=",")`
  - **Number of platform**: `r formatC(nrow(summary_table_original_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_original_2$profile_count), big.mark=",")`
+ - **Number of observations**: `r formatC(sum(summary_table_original_2$obs_count), big.mark=",")`
 
 ### Counts after filtering step 1
 
- - **Number of observations**: `r formatC(nrow(df_filtered1), big.mark=",")`
  - **Number of platform**: `r formatC(nrow(summary_table_filtered1_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_filtered1_2$profile_count), big.mark=",")`
+ - **Number of observations**: `r formatC(sum(summary_table_filtered1_2$obs_count), big.mark=",")`
 
 ### Counts after filtering step 2
 
- - **Number of observations**: `r formatC(nrow(df_filtered2), big.mark=",")`
  - **Number of platform**: `r formatC(nrow(summary_table_filtered2_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_filtered2_2$profile_count), big.mark=",")`
+ - **Number of observations**: `r formatC(sum(summary_table_filtered2_2$obs_count), big.mark=",")`
 
 ```{r, t_summary_loc_filter3, echo = FALSE, message = FALSE, warning = FALSE}
 
@@ -71,8 +67,5 @@ rm(p_loc_filter2)
 if (!file.exists(df_filtered_cache_name)) {
   saveRDS({{df_filtered}}, df_filtered_cache_name)
 }
-
-rm({{df}})
-rm(p_loc_filter1)
 
 ```

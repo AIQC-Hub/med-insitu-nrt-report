@@ -1,0 +1,11 @@
+```{r, t_var_dist_year2, echo = FALSE, message = FALSE, warning = FALSE, fig.width = 10}
+df_qc4 <- qc4_proportion({{df}}, "{{var}}")
+p_qc4_prop <-  create_qc4_density(df_qc4, "Density plot of QC 4 proportions")
+
+df_qc4_no_0 <- df_qc4 %>% filter(qc4_prop > 0)
+p_qc4_prop_no_0 <- create_qc4_density(df_qc4_no_0, "Density plot of QC 4 proportions (Excl. 0)")
+
+print(plot_grid(p_qc4_prop, p_qc4_prop_no_0), nrow=1)
+
+```
+

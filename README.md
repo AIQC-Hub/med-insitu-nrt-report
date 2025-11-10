@@ -1,11 +1,31 @@
-# Mediterranean Sea In Situ NRT Summary Report
+# Summary Reports for the Mediterranean Sea NRT and DM CTD Datasets
 
-A brief, one-line description of the project's purpose.
+Welcome to the site. Here, we provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
 
-## Description
+## Website
 
-A more detailed explanation of what the project does, its features, and its intended use. This section can also include the problem it solves or the value it provides.
+The reports are hosted on [GitHub Pages](https://aiqc-hub.github.io/med-insitu-nrt-report/).
 
-## Getting Started
+## Data Sources
 
-Instructions on how to set up and run the project locally.
+Three datasets were used to generate the reports:
+
+### BO Dataset
+
+- **Dataset ID**: [cmems_obs-ins_med_phybgcwav_mynrt_na_irr](https://doi.org/10.48670/moi-00044)  
+- **Duration**: History  
+- **Region**: Baltic Sea (BO)  
+- **Category**: CT (CTD)
+
+### GL Dataset
+
+- **Dataset ID**: [cmems_obs-ins_med_phybgcwav_mynrt_na_irr](https://doi.org/10.48670/moi-00044)  
+- **Duration**: History  
+- **Region**: Baltic Sea (GL)  
+- **Category**: CT (CTD)
+
+### CORA Dataset
+
+- **Dataset ID**: [cmems_obs-ins_glo_phy-temp-sal_my_cora_irr](https://data.marine.copernicus.eu/product/INSITU_GLO_PHY_TS_DISCRETE_MY_013_001)  
+- **Dataset Name**: CORA  
+- **Folder**: mediterrane
