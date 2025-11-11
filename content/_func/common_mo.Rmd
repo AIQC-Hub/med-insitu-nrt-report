@@ -38,8 +38,8 @@ time_span4_to <- 2025
 longitude_var_name <- "longitude"
 latitude_var_name <- "latitude"
 
-r_min_lon <- 6
-r_max_lon <- 36
+r_min_lon <- -10
+r_max_lon <- 40
 r_min_lat <- 30
 r_max_lat <-  46
 
@@ -49,9 +49,9 @@ r_excl_lon_tr <- NULL
 r_excl_lat_tr <- NULL
 
 # Platforms with multiple locations
-platform1 <- "58US"
-platform2 <- "ITP-82"
-platform3 <- "TOP-4"
+platform1 <- "CRELEV"
+platform2 <- "E1M3A"
+platform3 <- "HERAKLION"
 
 # Count variables for observation count density plots
 count1_1 <- "100"
