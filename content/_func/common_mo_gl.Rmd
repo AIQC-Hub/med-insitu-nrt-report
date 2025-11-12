@@ -13,13 +13,14 @@ parquet_qc4 <- "netcdf_nrt_mo_gl_2_summary_qc4.parquet"
 df_name <- "df_mo_gl"
 df_qc1_name <- "df_mo_gl_qc1"
 df_qc4_name <- "df_mo_gl_qc4"
+df_name <- "df_mo_gl"
 df_filtered_name <- "df_mo_gl_filtered"
 df_qc1_filtered_name <- "df_mo_gl_qc1_filtered"
 df_qc4_filtered_name <- "df_mo_gl_qc4_filtered"
 
 # Path
-rsc_dir <- "../../data/nrt_mo"
-rsc_dir2 <- "../data/nrt_mo"
+#rsc_dir <- "../../data/nrt_mo"
+#rsc_dir2 <- "../data/nrt_mo"
 df_filtered_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_filtered_name, ".rds"))
 df_filtered_qc1_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_qc1_filtered_name, ".rds"))
 df_filtered_qc4_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_qc4_filtered_name, ".rds"))

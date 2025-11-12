@@ -1,5 +1,5 @@
 ---
-title: "Profile Summary (AR)"
+title: "Profile Summary (MO)"
 description: |
   Profile summary report generated from a single Parquet file has been created from 190 NetCDF files from the Mediterranean Sea in situ NRT observations.
 output:
