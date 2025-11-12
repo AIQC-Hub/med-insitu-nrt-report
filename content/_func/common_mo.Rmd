@@ -8,13 +8,21 @@ region_code1 <- "MO"
 region_code2 <- "MO"
 parquet <- "netcdf_nrt_mo_2_summary.parquet"
 parquet_url <- file.path(release_url, parquet)
+parquet_qc1 <- "netcdf_nrt_mo_2_summary_qc1.parquet"
+parquet_qc4 <- "netcdf_nrt_mo_2_summary_qc4.parquet"
 df_name <- "df_mo"
+df_qc1_name <- "df_mo_qc1"
+df_qc4_name <- "df_mo_qc4"
 df_filtered_name <- "df_mo_filtered"
+df_qc1_filtered_name <- "df_mo_qc1_filtered"
+df_qc4_filtered_name <- "df_mo_qc4_filtered"
 
 # Path
-#rsc_dir <- "../../data/nrt_mo"
-#rsc_dir2 <- "../data/nrt_mo"
+rsc_dir <- "../../data/nrt_mo"
+rsc_dir2 <- "../data/nrt_mo"
 df_filtered_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_filtered_name, ".rds"))
+df_filtered_qc1_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_qc1_filtered_name, ".rds"))
+df_filtered_qc4_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_qc4_filtered_name, ".rds"))
 
 # Data frame
 mo_file_name <- file.path(rsc_dir, parquet)

@@ -3,13 +3,13 @@ summary_table_original <- netcdf_summary_1({{df}})
 summary_table_original_2 <- netcdf_summary_2(summary_table_original)
 
 if (file.exists(df_filtered_cache_name)) {
-  {{df_filtered}} <- readRDS(df_filtered_cache_name)
+  {{df_filtered_name}} <- readRDS(df_filtered_cache_name)
 } else {
-  {{df_filtered}} <- filer_locations({{df}})
-  saveRDS({{df_filtered}}, df_filtered_cache_name)
+  {{df_filtered_name}} <- filer_locations({{df}})
+  saveRDS({{df_filtered_name}}, df_filtered_cache_name)
 }
 
-summary_table_filtered1 <- netcdf_summary_1({{df_filtered}})
+summary_table_filtered1 <- netcdf_summary_1({{df_filtered_name}})
 summary_table_filtered1_2 <- netcdf_summary_2(summary_table_filtered1)
 
 ```
@@ -47,7 +47,3 @@ print(plot_grid(p_loc_original, p_loc_filter1, nrow = 2))
  - **Number of platform**: `r formatC(nrow(summary_table_filtered1_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_filtered1_2$profile_count), big.mark=",")`
  - **Number of observations**: `r formatC(sum(summary_table_filtered1_2$obs_count), big.mark=",")`
-
-```{r, t_summary_loc_filter3, echo = FALSE, message = FALSE, warning = FALSE}
-
-```

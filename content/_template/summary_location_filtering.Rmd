@@ -63,9 +63,6 @@ print(plot_grid(p_loc_original,
 
 ```{r, t_summary_loc_filter3, echo = FALSE, message = FALSE, warning = FALSE}
 
-{{df_filtered}} <- df_filtered2
-if (!file.exists(df_filtered_cache_name)) {
-  saveRDS({{df_filtered}}, df_filtered_cache_name)
-}
+{{df_filtered_name}} <- df_filtered2
 
 ```
