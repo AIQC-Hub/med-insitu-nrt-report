@@ -73,10 +73,12 @@ na_summary <- function(df, var) {
 
   df_pfs <- df %>%
     group_by(platform_code) %>%
-    summarise(pfs_non_na = sum(if_else(!!na_col > 0, 0, 1)), .groups = "drop") %>%
+    summarise(pfs_counts = sum(!!count_col),
+              pfs_na_counts = sum(!!na_col),
+              pfs_non_na_counts = sum(!!non_na_col), .groups = "drop") %>%
     summarise(
       pfs_tot = n(),
-      pfs_non_na = sum(pfs_non_na == n()),
+      pfs_non_na = sum(pfs_counts == pfs_non_na_counts),
       .groups = "drop"
     )
 

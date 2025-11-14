@@ -38,7 +38,8 @@ res <- knitr::knit_child(text = src, quiet = TRUE)
 
 ## 1. Basic Information
 ```{r, basic_info, results = 'asis'}
-res <- knitr::knit_expand(t_v_basic_info)
+src <- knitr::knit_expand(t_v_basic_info)
+res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
@@ -54,9 +55,18 @@ cat(res, sep = '\n')
 
 ---
 
-## 3. Distributions Over Time and Location
-```{r, distributions, results = 'asis'}
-src <- knitr::knit_expand(t_v_distributions)
+## 3. Distributions By Year
+```{r, distributions_year, results = 'asis'}
+src <- knitr::knit_expand(t_v_distributions_year)
+res <- knitr::knit_child(text = src, quiet = TRUE)
+cat(res, sep = '\n')
+```
+
+---
+
+## 4. Distributions By Month
+```{r, distributions_month, results = 'asis'}
+src <- knitr::knit_expand(t_v_distributions_month)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```

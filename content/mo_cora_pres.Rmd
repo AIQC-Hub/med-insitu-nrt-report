@@ -19,6 +19,7 @@ r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_cora.Rmd", "var.Rmd")
 var <- "pres"
 var_name <- "Pressure"
 var_label <- "Pres"
+
 ```
 
 ```{r, import, include = FALSE, child=file.path(r_func_path, r_funcs)}
