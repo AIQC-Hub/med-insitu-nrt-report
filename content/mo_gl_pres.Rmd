@@ -25,8 +25,15 @@ var_label <- "Pres"
 ```{r, import, include = FALSE, child=file.path(r_func_path, r_funcs)}
 ```
 
+```{r, load_qc_summary, include = FALSE}
+src <- knitr::knit_expand(t_load_qc_summary)
+res <- knitr::knit_child(text = src, quiet = TRUE)
+```
+
 ```{r, location_filtering, include = FALSE}
-src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name)
+src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name,
+                          df_qc1=df_qc1_name, df_qc1_filtered=df_qc1_filtered_name,
+                          df_qc4=df_qc4_name, df_qc4_filtered=df_qc4_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 ```
 
@@ -40,7 +47,8 @@ cat(res, sep = '\n')
 
 ## 2. Summary Statistics
 ```{r, summary_stats, results = 'asis'}
-src <- knitr::knit_expand(t_v_summary_stats, df=df_filtered_name)
+src <- knitr::knit_expand(t_v_summary_stats, df=df_filtered_name,
+                          df_qc1=df_qc1_filtered_name, df_qc4=df_qc4_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```

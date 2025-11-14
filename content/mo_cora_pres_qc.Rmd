@@ -1,7 +1,7 @@
 ---
-title: "Pressure QC (AR)"
+title: "Pressure QC (CORA)"
 description: |
-  Basic analysis of the pressure QC data from the Mediterranean Sea in situ NRT observations.
+  Basic analysis of the pressure QC data from the CORA In-situ observations.
 output:
   distill::distill_article:
     toc: true
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo=FALSE)
 
 # Common functions
 r_func_path <- "./_func"
-r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo.Rmd", "qc.Rmd")
+r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_cora.Rmd", "qc.Rmd")
 
 # Variables
 var <- "pres"
@@ -22,18 +22,6 @@ qc_var_name <- "Pressure QC flag"
 ```
 
 ```{r, import, child=file.path(r_func_path, r_funcs)}
-```
-
-```{r, load_qc_summary, include = FALSE}
-src <- knitr::knit_expand(t_load_qc_summary)
-res <- knitr::knit_child(text = src, quiet = TRUE)
-```
-
-```{r, location_filtering, include = FALSE}
-src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name,
-                          df_qc1=df_qc1_name, df_qc1_filtered=df_qc1_filtered_name,
-                          df_qc4=df_qc4_name, df_qc4_filtered=df_qc4_filtered_name)
-res <- knitr::knit_child(text = src, quiet = TRUE)
 ```
 
 ## 1. Basic Information
@@ -46,7 +34,7 @@ cat(res, sep = '\n')
 
 ## 2. Summary Statistics
 ```{r, summary_stats, results = 'asis'}
-src <- knitr::knit_expand(t_qc_summary_stats, df=df_filtered_name)
+src <- knitr::knit_expand(t_qc_summary_stats, df=df_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```
@@ -55,7 +43,16 @@ cat(res, sep = '\n')
 
 ## 3. Distributions Over Time
 ```{r, distributions, results = 'asis'}
-src <- knitr::knit_expand(t_qc_distributions)
+src <- knitr::knit_expand(t_qc_distributions, df=df_name)
+res <- knitr::knit_child(text = src, quiet = TRUE)
+cat(res, sep = '\n')
+```
+
+---
+
+## 4. Fraction of QC4 Flags per Profile
+```{r, fraction, results = 'asis'}
+src <- knitr::knit_expand(t_qc_qc4_proportion, df=df_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```

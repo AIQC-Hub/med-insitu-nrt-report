@@ -34,7 +34,7 @@ var_summary_2 <- function(df, var_x) {
   df %>%
     select(platform_code,
            profile_timestamp,
-           profile_no2,
+           profile_no,
            n = !!col_count,
            min_x = !!col_min,
            median_x = !!col_median,

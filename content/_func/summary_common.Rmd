@@ -2,7 +2,7 @@
 
 netcdf_summary_1 <- function(df) {
   df %>%
-    group_by(platform_code, profile_no2) %>%
+    group_by(platform_code, profile_no) %>%
     summarise(obs_count = sum(observation_no_count), profile_timestamp = first(profile_timestamp),
               longitude = first(longitude), latitude = first(latitude)) %>%
     ungroup()

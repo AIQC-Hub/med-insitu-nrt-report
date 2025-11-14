@@ -29,31 +29,31 @@ mo_file_name <- file.path(rsc_dir, parquet)
 df_mo <- read_parquet(mo_file_name)
 
 # Time spans
-time_span1 <- "ts7989"
-time_span1_from <- 1979
-time_span1_to <- 1989
-time_span2 <- "ts9006"
-time_span2_from <- 1990
-time_span2_to <- 2006
-time_span3 <- "ts07A7"
-time_span3_from <- 2007
+time_span1 <- "ts7809"
+time_span1_from <- 1978
+time_span1_to <- 2009
+time_span2 <- "tsA0A2"
+time_span2_from <- 2010
+time_span2_to <- 2012
+time_span3 <- "tsA3A7"
+time_span3_from <- 2013
 time_span3_to <- 2017
-time_span4 <- "tsA8B5"
+time_span4 <- "tsA8B1"
 time_span4_from <- 2018
-time_span4_to <- 2025
+time_span4_to <- 2021
 
 # Locations
 longitude_var_name <- "longitude"
 latitude_var_name <- "latitude"
 
-r_min_lon <- -10
-r_max_lon <- 40
-r_min_lat <- 30
-r_max_lat <-  46
+r_min_lon <- -5.61
+r_max_lon <- 35.567
+r_min_lat <- 28.378
+r_max_lat <-  45.755
 
 r_excl_lon_bl <- NULL
-r_excl_lat_bl <- NULL
 r_excl_lon_tr <- NULL
+r_excl_lat_bl <- NULL
 r_excl_lat_tr <- NULL
 
 # Platforms with multiple locations
@@ -66,9 +66,9 @@ count1_1 <- "100"
 count1_2 <- "1000"
 count1_3 <- "2000"
 count2_1 <- "1"
-count2_2 <- "1"
-count3_1 <- "2"
-count3_2 <- "10"
+count2_2 <- "10"
+count3_1 <- "11"
+count3_2 <- "25"
 count4_1 <- "1000"
 count4_2 <- "2000"
 count5 <- "2000"

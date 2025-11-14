@@ -30,37 +30,42 @@ mo_file_name <- file.path(rsc_dir, parquet)
 df_mo_gl <- read_parquet(mo_file_name)
 
 # Time spans
-time_span1 <- "ts7989"
-time_span1_from <- 1979
-time_span1_to <- 1989
-time_span2 <- "ts9006"
-time_span2_from <- 1990
-time_span2_to <- 2006
-time_span3 <- "ts07A7"
-time_span3_from <- 2007
-time_span3_to <- 2017
-time_span4 <- "tsA8B5"
-time_span4_from <- 2018
+time_span1 <- "ts5885"
+time_span1_from <- 1958
+time_span1_to <- 1985
+time_span2 <- "ts8604"
+time_span2_from <- 1986
+time_span2_to <- 2004
+time_span3 <- "ts05A4"
+time_span3_from <- 2005
+time_span3_to <- 2014
+time_span4 <- "tsA5B5"
+time_span4_from <- 2015
 time_span4_to <- 2025
 
 # Locations
 longitude_var_name <- "longitude"
 latitude_var_name <- "latitude"
 
-r_min_lon <- 6
-r_max_lon <- 36
-r_min_lat <- 30
-r_max_lat <-  46
+r_min_lon <- -5.61
+r_max_lon <- 35.567
+r_min_lat <- 28.378
+r_max_lat <-  45.755
 
-r_excl_lon_bl <- NULL
-r_excl_lat_bl <- NULL
-r_excl_lon_tr <- NULL
-r_excl_lat_tr <- NULL
+r_excl_lon_bl <- 27
+r_excl_lat_bl <- 41
+r_excl_lon_tr <- 36
+r_excl_lat_tr <- 46
+
+r_excl_lon_bl2 <- -5.61
+r_excl_lat_bl2 <- 42
+r_excl_lon_tr2 <- 0
+r_excl_lat_tr2 <- 46
 
 # Platforms with multiple locations
-platform1 <- "NODC32HP"
-platform2 <- "JNZL"
-platform3 <- "SHIP"
+platform1 <- "SHIP"
+platform2 <- "FNCM"
+platform3 <- "EXEC0094"
 
 # Count variables for observation count density plots
 count1_1 <- "100"
@@ -72,7 +77,7 @@ count3_1 <- "2"
 count3_2 <- "10"
 count4_1 <- "1000"
 count4_2 <- "2000"
-count5 <- "2000"
+count5 <- "4000"
 
 # Functions
 split_time_spans <- function(df) {
@@ -87,7 +92,8 @@ filer_locations <- function(df) {
 }
 
 exclude_locations <- function(df) {
-  df
+  df_ex1 <- exclude_locations_common(df, r_excl_lon_bl, r_excl_lat_bl, r_excl_lon_tr, r_excl_lat_tr)
+  exclude_locations_common(df_ex1, r_excl_lon_bl2, r_excl_lat_bl2, r_excl_lon_tr2, r_excl_lat_tr2)
 }
 
 ```

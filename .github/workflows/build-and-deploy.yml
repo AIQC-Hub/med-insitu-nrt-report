@@ -32,13 +32,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up the R environment
+      # 2. Create the target data directory
+      - name: Create data directory
+        run: mkdir -p data
+
+      # 3. Download the data assets from your GitHub Release
+      - name: Download release assets
+        env:
+          # The GITHUB_TOKEN is automatically created and provided by GitHub
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Downloads all assets from release v0.1.0 into the 'data' directory.
+        # Your R scripts can now reliably use the path "./data/your-file.csv"
+        run: gh release download v0.1.0 --dir ./data --pattern '*'
+
+      # Optional: Verify that the files were downloaded correctly
+      - name: List downloaded files
+        run: ls -lh data
+
+      # 4. Set up the R environment
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.4'
 
-      # 3. Cache and install R package dependencies
+      # 5. Cache and install R package dependencies
       # This action reads your DESCRIPTION file and installs all listed packages
       - name: Install R dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
@@ -60,23 +77,6 @@ jobs:
             any::maps
             any::xaringanExtra
             any::hexbin
-
-      # 4. Create the target data directory
-      - name: Create data directory
-        run: mkdir -p data
-
-      # 5. Download the data assets from your GitHub Release
-      - name: Download release assets
-        env:
-          # The GITHUB_TOKEN is automatically created and provided by GitHub
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # Downloads all assets from release v0.1.0 into the 'data' directory.
-        # Your R scripts can now reliably use the path "./data/your-file.csv"
-        run: gh release download v0.1.0 --dir ./data --pattern '*'
-
-      # Optional: Verify that the files were downloaded correctly
-      - name: List downloaded files
-        run: ls -lh data
 
       # 6. Build the distill site using an R command
       - name: Build site
