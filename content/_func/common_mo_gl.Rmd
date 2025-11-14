@@ -1,4 +1,4 @@
-```{r, func_common_ar, message = FALSE, warning = FALSE}
+```{r, func_common_mo_gl, message = FALSE, warning = FALSE}
 
 # Common variables
 netcdf <- "cmems_obs-ins_med_phybgcwav_mynrt_na_irr"
@@ -6,19 +6,28 @@ netcdf_doi <- "https://doi.org/10.48670/moi-00044"
 region <- "Mediterranean Sea"
 region_code1 <- "MO"
 region_code2 <- "GL"
-parquet <- "netcdf_nrt_mo_gl.parquet"
+parquet <- "netcdf_nrt_mo_gl_2_summary.parquet"
 parquet_url <- file.path(release_url, parquet)
-df_name <- "df_mo"
+parquet_qc1 <- "netcdf_nrt_mo_gl_2_summary_qc1.parquet"
+parquet_qc4 <- "netcdf_nrt_mo_gl_2_summary_qc4.parquet"
+df_name <- "df_mo_gl"
+df_qc1_name <- "df_mo_gl_qc1"
+df_qc4_name <- "df_mo_gl_qc4"
+df_name <- "df_mo_gl"
 df_filtered_name <- "df_mo_gl_filtered"
+df_qc1_filtered_name <- "df_mo_gl_qc1_filtered"
+df_qc4_filtered_name <- "df_mo_gl_qc4_filtered"
 
 # Path
-rsc_dir <- "../../data/nrt_ar"
-#rsc_dir <- "../data/nrt_ar"
+#rsc_dir <- "../../data/nrt_mo"
+#rsc_dir2 <- "../data/nrt_mo"
 df_filtered_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_filtered_name, ".rds"))
+df_filtered_qc1_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_qc1_filtered_name, ".rds"))
+df_filtered_qc4_cache_name <- file.path(normalizePath(rsc_dir), paste0(df_qc4_filtered_name, ".rds"))
 
 # Data frame
-ar_file_name <- file.path(rsc_dir, parquet)
-df_ar <- read_parquet(ar_file_name)
+mo_file_name <- file.path(rsc_dir, parquet)
+df_mo_gl <- read_parquet(mo_file_name)
 
 # Time spans
 time_span1 <- "ts7989"
@@ -49,9 +58,9 @@ r_excl_lon_tr <- NULL
 r_excl_lat_tr <- NULL
 
 # Platforms with multiple locations
-platform1 <- "58US"
-platform2 <- "ITP-82"
-platform3 <- "TOP-4"
+platform1 <- "NODC32HP"
+platform2 <- "JNZL"
+platform3 <- "SHIP"
 
 # Count variables for observation count density plots
 count1_1 <- "100"
@@ -60,7 +69,7 @@ count1_3 <- "2000"
 count2_1 <- "1"
 count2_2 <- "1"
 count3_1 <- "2"
-count3_2 <- "2"
+count3_2 <- "10"
 count4_1 <- "1000"
 count4_2 <- "2000"
 count5 <- "2000"
@@ -79,34 +88,6 @@ filer_locations <- function(df) {
 
 exclude_locations <- function(df) {
   df
-}
-
-get_unique_profile_no <- function(df) {
-  get_unique_profile_no_common(df, longitude, latitude)
-}
-
-update_profile_no <- function(df, df_profiles) {
-  update_profile_no_common(df, df_profiles, longitude, latitude, "longitude", "latitude")
-}
-
-find_duplicates_within_platforms <- function(df) {
-  find_duplicates_within_platforms_common(df, longitude, latitude)
-}
-
-find_duplicates_across_platforms <- function(df) {
-  find_duplicates_across_platforms_common(df, longitude, latitude)
-}
-
-summarise_df_dup_within <- function(df_orig, df_dup) {
-  summarise_df_dup_within_common(df_orig, df_dup, longitude, latitude)
-}
-
-summarise_df_dup_across <- function(df_orig, df_dup) {
-  summarise_df_dup_across_common(df_orig, df_dup, longitude, latitude)
-}
-
-remove_duplicates_within_platforms <- function(df_orig, df_dup_summary) {
-  remove_duplicates_within_platforms_common(df_orig, df_dup_summary)
 }
 
 ```

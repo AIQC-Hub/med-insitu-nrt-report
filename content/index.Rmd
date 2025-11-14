@@ -1,15 +1,38 @@
 ---
-title: "Mediterranean Sea In Situ NRT Summary Report"
+title: "Mediterranean Sea In Situ Observations"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Welcome to the site. Here, we provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
 ```
 
+## Contents
+
+1. Profile Summary
+    - [Profile Summary (MO)](./mo_summary.html)
+    - [Profile Summary (GL)](./mo_gl_summary.html)
+    - [Profile Summary (CORA)](./mo_cora_summary.html)
+1. Pressure
+    - [Pressure (MO)](./mo_pres.html)
+    - [Pressure (GL)](./mo_gl_pres.html)
+    - [Pressure (CORA)](./mo_cora_pres.html)
+    - [Pressure QC (MO)](./mo_pres_qc.html)
+    - [Pressure QC (GL)](./mo_gl_pres_qc.html)
+    - [Pressure QC (CORA)](./mo_cora_pres_qc.html)
+1. Temperature
+    - [Temperature (MO)](./mo_temp.html)
+    - [Temperature (GL)](./mo_gl_temp.html)
+    - [Temperature (CORA)](./mo_cora_temp.html)
+    - [Temperature QC (MO)](./mo_temp_qc.html)
+    - [Temperature QC (GL)](./mo_gl_temp_qc.html)
+    - [Temperature QC (CORA)](./mo_cora_temp_qc.html)
+1. Salinity
+    - [Salinity (MO)](./mo_psal.html)
+    - [Salinity (GL)](./mo_gl_psal.html)
+    - [Salinity (CORA)](./mo_cora_psal.html)
+    - [Salinity QC (MO)](./mo_psal_qc.html)
+    - [Salinity QC (GL)](./mo_gl_psal_qc.html)
+    - [Salinity QC (CORA)](./mo_cora_psal_qc.html)

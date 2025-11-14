@@ -18,11 +18,6 @@ print(plot_grid(p_obs_count_hist, p_obs_count_hist_count1,
                 p_obs_count_hist_count2, p_obs_count_hist_count3,
                 nrow = 2))
 
-rm(p_obs_count_hist)
-rm(p_obs_count_hist_count1)
-rm(p_obs_count_hist_count2)
-rm(p_obs_count_hist_count3)
-
 ```
 
 ### Mapped locations of {{count2_1}}-{{count2_2}}, {{count3_1}}-{{count3_2}}, {{count4_1}}-{{count4_2}}, and ≥{{count5}} observations
@@ -48,12 +43,7 @@ p_long_x_lat_obs4 <- summary_table_netcdf %>% filter(obs_count >= {{count5}}) %>
   mutate(longitude = {{longitude_var_name}}, latitude = {{latitude_var_name}}) %>%
   create_region_scatter("#Obs: ≥{{count5}}", lat_range, lon_range)
 
-print(plot_grid(p_long_x_lat_obs1, p_long_x_lat_obs2, 
+print(plot_grid(p_long_x_lat_obs1, p_long_x_lat_obs2,
                 p_long_x_lat_obs3, p_long_x_lat_obs4, nrow = {{plot_nrow}}))
-
-rm(p_long_x_lat_obs1)
-rm(p_long_x_lat_obs2)
-rm(p_long_x_lat_obs3)
-rm(p_long_x_lat_obs4)
 
 ```
