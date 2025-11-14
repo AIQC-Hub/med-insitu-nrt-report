@@ -1,7 +1,7 @@
 ---
-title: "Practical Salinity (GL)"
+title: "Pressure (CORA)"
 description: |
-  Basic analysis of the salinity data from the Mediterranean Sea in situ NRT observations.
+  Basic analysis of the pressure data from the CORA In-situ observations.
 output:
   distill::distill_article:
     toc: true
@@ -13,12 +13,13 @@ knitr::opts_chunk$set(echo=FALSE)
 
 # Common functions
 r_func_path <- "./_func"
-r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_gl.Rmd", "var.Rmd")
+r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_cora.Rmd", "var.Rmd")
 
 # Variables
-var <- "psal"
-var_name <- "Practical salinity"
-var_label <- "Psal"
+var <- "pres"
+var_name <- "Pressure"
+var_label <- "Pres"
+
 ```
 
 ```{r, import, include = FALSE, child=file.path(r_func_path, r_funcs)}
@@ -26,13 +27,6 @@ var_label <- "Psal"
 
 ```{r, load_qc_summary, include = FALSE}
 src <- knitr::knit_expand(t_load_qc_summary)
-res <- knitr::knit_child(text = src, quiet = TRUE)
-```
-
-```{r, location_filtering, include = FALSE}
-src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name,
-                          df_qc1=df_qc1_name, df_qc1_filtered=df_qc1_filtered_name,
-                          df_qc4=df_qc4_name, df_qc4_filtered=df_qc4_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 ```
 
@@ -47,8 +41,8 @@ cat(res, sep = '\n')
 
 ## 2. Summary Statistics
 ```{r, summary_stats, results = 'asis'}
-src <- knitr::knit_expand(t_v_summary_stats, df=df_filtered_name,
-                          df_qc1=df_qc1_filtered_name, df_qc4=df_qc4_filtered_name)
+src <- knitr::knit_expand(t_v_summary_stats, df=df_name,
+                          df_qc1=df_qc1_name, df_qc4=df_qc4_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```

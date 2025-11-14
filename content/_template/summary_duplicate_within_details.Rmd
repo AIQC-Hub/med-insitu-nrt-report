@@ -4,9 +4,9 @@
 
 df_dup_summary <- summarise_df_dup_within({{df}}, df_dup_within)
 create_dt_summary_tab(df_dup_summary %>%
-  dplyr::select(`Platform` = 1, `Profile` = 2, `Timestamp` = 3,
-                `Longitude` = 4, `Latitude` = 5, n = 6,
-                `Avg(Pres)` = 7, `Avg(Temp)` = 8, `Avg(Psal)` = 9),
+  dplyr::select(`Platform` = platform_code, `Profile` = profile_no, `Timestamp` = profile_timestamp,
+                `Longitude` = lon2, `Latitude` = lat2, n = observation_no_count,
+                `Avg(Pres)` = pres_mean, `Avg(Temp)` = temp_mean, `Avg(Psal)` = psal_mean),
   cols = c("Avg(Pres)", "Avg(Temp)", "Avg(Psal)"))
 
 ```

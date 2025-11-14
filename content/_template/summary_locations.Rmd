@@ -34,11 +34,6 @@ p_long_x_lat_platform3 <- get_loc_by_platform(summary_table_netcdf, "{{platform3
 print(plot_grid(p_long_x_lat, p_long_x_lat_platform1,
                 p_long_x_lat_platform2, p_long_x_lat_platform3, nrow = {{plot_nrow}}))
 
-rm(p_long_x_lat)
-rm(p_long_x_lat_platform1)
-rm(p_long_x_lat_platform2)
-rm(p_long_x_lat_platform3)
-
 ```
 
 ### Histograms of longitudes and latitudes from all profiles
@@ -51,8 +46,5 @@ p_lat_dense <- summary_table_netcdf %>% mutate(x = latitude) %>%
   create_region_hist("Histogram of latitude", "Latitude")
 
 print(plot_grid(p_long_dense, p_lat_dense, nrow = 1))
-
-rm(p_long_dense)
-rm(p_lat_dense)
 
 ```

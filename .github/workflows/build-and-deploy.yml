@@ -1,0 +1,100 @@
+name: Build and Deploy Distill Site
+
+# Run this workflow on pushes to the main branch
+on:
+  push:
+    branches:
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Grant the GITHUB_TOKEN permissions to deploy to GitHub Pages
+permissions:
+  contents: read    # To checkout the repo and read release assets
+  pages: write      # To deploy to Pages
+  id-token: write   # To authenticate with OIDC
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 1. Checkout your repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Create the target data directory
+      - name: Create data directory
+        run: mkdir -p data
+
+      # 3. Download the data assets from your GitHub Release
+      - name: Download release assets
+        env:
+          # The GITHUB_TOKEN is automatically created and provided by GitHub
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Downloads all assets from release v0.1.0 into the 'data' directory.
+        # Your R scripts can now reliably use the path "./data/your-file.csv"
+        run: gh release download v0.1.0 --dir ./data --pattern '*'
+
+      # Optional: Verify that the files were downloaded correctly
+      - name: List downloaded files
+        run: ls -lh data
+
+      # 4. Set up the R environment
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4'
+
+      # 5. Cache and install R package dependencies
+      # This action reads your DESCRIPTION file and installs all listed packages
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages:
+            any::rmarkdown
+            any::distill
+            any::fontawesome
+            any::kableExtra
+            any::DT
+            any::htmltools
+            any::arrow
+            any::data.table
+            any::tidyverse
+            any::rlang
+            any::ggpubr
+            any::cowplot
+            any::scales
+            any::maps
+            any::xaringanExtra
+            any::hexbin
+
+      # 6. Build the distill site using an R command
+      - name: Build site
+        run: R -e 'rmarkdown::render_site(input = "content", encoding = "UTF-8")'
+
+      # 7. Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 8. Upload the built site as an artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # This MUST match the `output_dir` from your _site.yml
+          # The default for distill is '_site'. We use 'docs' here based on your description.
+          path: './content/docs'
+
+      # 9. Deploy the artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
