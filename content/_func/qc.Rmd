@@ -19,7 +19,7 @@ get_flag_def <- function() {
 
 get_flag_counts <- function(df, var) {
   flag_counts <- df %>%
-    select(platform_code, profile_no2, starts_with(var)) %>%
+    select(platform_code, profile_no, starts_with(var)) %>%
     pivot_longer(
       cols = starts_with(var),
       names_to = "Code",
@@ -39,7 +39,7 @@ get_flag_counts <- function(df, var) {
 
 qc_summary_1 <- function(df, var) {
   df %>%
-    select(platform_code, profile_no2, starts_with(var)) %>%
+    select(platform_code, profile_no, starts_with(var)) %>%
     pivot_longer(
       cols = starts_with(var),
       names_to = "Code",
@@ -62,7 +62,7 @@ format_qc_summary_1 <- function(df) {
 
 qc_summary_time <- function(df, var) {
   df %>%
-    select(platform_code, profile_no2, x, starts_with(var)) %>%
+    select(platform_code, profile_no, x, starts_with(var)) %>%
     pivot_longer(
       cols = starts_with(var),
       names_to = "Code",
@@ -85,7 +85,7 @@ qc4_proportion <- function(df, var_x) {
   df %>%
     select(platform_code,
            profile_timestamp,
-           profile_no2,
+           profile_no,
            n = !!col_count,
            qc4_x = !!col_qc4) %>%
     mutate(qc4_prop = qc4_x / n)

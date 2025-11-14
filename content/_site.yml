@@ -1,47 +1,64 @@
 name: "med-insitu-nrt-report"
-title: "Mediterranean Sea In Situ NRT Summary"
+title: "Mediterranean Sea In Situ Observations"
 description: |
-  Mediterranean Sea In Situ NRT Summary Report
+  Summary Report of Mediterranean Sea In Situ Observations
 output_dir: "docs"
 exclude: ["script", "data", "rmd_child",
           "DESCRIPTION", "CHANGELOG.md", "README.md", "LICENSE"]
 navbar:
   right:
-    - text: "Summary (MO)"
-      href: mo_summary.html
-    - text: "Variables (MO)"
+    - text: "Profile Summary"
+      menu:
+        - text: "Summary (MO)"
+          href: mo_summary.html
+        - text: "Summary (GL)"
+          href: mo_gl_summary.html
+        - text: "Summary (CORA)"
+          href: mo_cora_summary.html
+    - text: "Pressure"
       menu:
         - text: "Pres (MO)"
           href: mo_pres.html
-        - text: "Temp (MO)"
-          href: mo_temp.html
-        - text: "Psal (MO)"
-          href: mo_psal.html
-    - text: "QC Flags (MO)"
-      menu:
-        - text: "Pres QC (MO)"
-          href: mo_pres_qc.html
-        - text: "Temp QC (MO)"
-          href: mo_temp_qc.html
-        - text: "Psal QC (MO)"
-          href: mo_psal_qc.html
-    - text: "Summary (GL)"
-      href: mo_gl_summary.html
-    - text: "Variables (GL)"
-      menu:
         - text: "Pres (GL)"
           href: mo_gl_pres.html
-        - text: "Temp (GL)"
-          href: mo_gl_temp.html
-        - text: "Psal (GL)"
-          href: mo_gl_psal.html
-    - text: "QC Flags (GL)"
-      menu:
+        - text: "Pres (CORA)"
+          href: mo_cora_pres.html
+        - text: "---"
+        - text: "Pres QC (MO)"
+          href: mo_pres_qc.html
         - text: "Pres QC (GL)"
           href: mo_gl_pres_qc.html
+        - text: "Pres QC (CORA)"
+          href: mo_cora_pres_qc.html
+    - text: "Temperature"
+      menu:
+        - text: "Temp (MO)"
+          href: mo_temp.html
+        - text: "Temp (GL)"
+          href: mo_gl_temp.html
+        - text: "Temp (CORA)"
+          href: mo_cora_temp.html
+        - text: "---"
+        - text: "Temp QC (MO)"
+          href: mo_temp_qc.html
         - text: "Temp QC (GL)"
           href: mo_gl_temp_qc.html
+        - text: "Temp QC (CORA)"
+          href: mo_cora_temp_qc.html
+    - text: "Salinity"
+      menu:
+        - text: "Psal (MO)"
+          href: mo_psal.html
+        - text: "Psal (GL)"
+          href: mo_gl_psal.html
+        - text: "Psal (CORA)"
+          href: mo_cora_psal.html
+        - text: "---"
+        - text: "Psal QC (MO)"
+          href: mo_psal_qc.html
         - text: "Psal QC (GL)"
           href: mo_gl_psal_qc.html
+        - text: "Psal QC (CORA)"
+          href: mo_cora_psal_qc.html
 
 output: distill::distill_article

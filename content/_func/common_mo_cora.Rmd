@@ -1,0 +1,89 @@
+```{r, func_common_mo_cora, message = FALSE, warning = FALSE}
+
+# Common variables
+netcdf <- "cmems_obs-ins_glo_phy-temp-sal_my_cora_irr"
+netcdf_doi <- "https://doi.org/10.17882/46219"
+region <- "Mediterranean Sea"
+region_code1 <- "MO"
+region_code2 <- "CORA"
+parquet <- "netcdf_cora_mo_2_summary.parquet"
+parquet_url <- file.path(release_url, parquet)
+parquet_qc1 <- "netcdf_cora_mo_2_summary_qc1.parquet"
+parquet_qc4 <- "netcdf_cora_mo_2_summary_qc4.parquet"
+df_name <- "df_mo_cora"
+df_qc1_name <- "df_mo_cora_qc1"
+df_qc4_name <- "df_mo_cora_qc4"
+df_filtered_name <- "df_mo_cora_filtered"
+df_qc1_filtered_name <- "df_mo_cora_qc1_filtered"
+df_qc4_filtered_name <- "df_mo_cora_qc4_filtered"
+
+# Path
+#rsc_dir <- "../../data/cora_mo"
+#rsc_dir2 <- "../data/cora_mo"
+
+# Data frame
+mo_file_name <- file.path(rsc_dir, parquet)
+df_mo_cora <- read_parquet(mo_file_name)
+
+# Time spans
+time_span1 <- "ts5988"
+time_span1_from <- 1959
+time_span1_to <- 1988
+time_span2 <- "ts8906"
+time_span2_from <- 1989
+time_span2_to <- 2006
+time_span3 <- "ts07A9"
+time_span3_from <- 2007
+time_span3_to <- 2019
+time_span4 <- "tsB0B4"
+time_span4_from <- 2020
+time_span4_to <- 2024
+
+# Locations
+longitude_var_name <- "longitude"
+latitude_var_name <- "latitude"
+
+r_min_lon <- NULL
+r_max_lon <- NULL
+r_min_lat <- NULL
+r_max_lat <-  NULL
+
+r_excl_lon_bl <- NULL
+r_excl_lat_bl <- NULL
+r_excl_lon_tr <- NULL
+r_excl_lat_tr <- NULL
+
+# Platforms with multiple locations
+platform1 <- "FNCM"
+platform2 <- "UVMM"
+platform3 <- "FGTO"
+
+# Count variables for observation count density plots
+count1_1 <- "100"
+count1_2 <- "1000"
+count1_3 <- "1000"
+count2_1 <- "1"
+count2_2 <- "1"
+count3_1 <- "2"
+count3_2 <- "10"
+count4_1 <- "100"
+count4_2 <- "2000"
+count5 <- "2000"
+
+# Functions
+split_time_spans <- function(df) {
+  split_time_spans_common(df, time_span1, time_span1_from, time_span1_to,
+                          time_span2, time_span2_from, time_span2_to,
+                          time_span3, time_span3_from, time_span3_to,
+                          time_span4, time_span4_from, time_span4_to)
+}
+
+filer_locations <- function(df) {
+  df
+}
+
+exclude_locations <- function(df) {
+  df
+}
+
+```
