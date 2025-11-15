@@ -1,6 +1,6 @@
 Package: med-report
 Title: Summary Report for the Mediterranean Sea NRT and DM CTD Datasets
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person("Takaya", "Saito", email = "takaya.saito@outlook.com", role = c("aut", "cre"))
 Description: R Markdown source for the in situ summary report.\
 License: MIT
