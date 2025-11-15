@@ -1,11 +1,14 @@
 name: "med-insitu-nrt-report"
-title: "Mediterranean Sea In Situ Observations"
+title: "Mediterranean Sea"
 description: |
   Summary Report of Mediterranean Sea In Situ Observations
 output_dir: "docs"
 exclude: ["script", "data", "rmd_child",
           "DESCRIPTION", "CHANGELOG.md", "README.md", "LICENSE"]
 navbar:
+  logo:
+    image: images/logo.png
+    href: https://aiqc-hub.github.io/insitu-nrt-report/
   right:
     - text: "Profile Summary"
       menu:

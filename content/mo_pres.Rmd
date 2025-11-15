@@ -31,8 +31,13 @@ res <- knitr::knit_child(text = src, quiet = TRUE)
 ```
 
 ```{r, location_filtering, include = FALSE}
-src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name,
-                          df_qc1=df_qc1_name, df_qc1_filtered=df_qc1_filtered_name,
+src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name)
+res <- knitr::knit_child(text = src, quiet = TRUE)
+```
+
+```{r, location_filtering_qc, include = FALSE}
+src <- knitr::knit_expand(t_location_filtering_qc,
+                          f_qc1=df_qc1_name, df_qc1_filtered=df_qc1_filtered_name,
                           df_qc4=df_qc4_name, df_qc4_filtered=df_qc4_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 ```
