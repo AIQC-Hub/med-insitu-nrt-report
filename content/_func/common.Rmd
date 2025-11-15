@@ -31,6 +31,7 @@ t_s_location_filtering <- file.path(template_path, "summary_location_filtering.R
 t_s_location_filtering2 <- file.path(template_path, "summary_location_filtering2.Rmd")
 t_s_location_filtering3 <- file.path(template_path, "summary_location_filtering3.Rmd")
 t_s_descriptive_stats <- file.path(template_path, "summary_descriptive_stats.Rmd")
+t_s_time_location_qc <- file.path(template_path, "summary_time_location_qc.Rmd")
 t_s_locations <- file.path(template_path, "summary_locations.Rmd")
 t_s_distribution_time <- file.path(template_path, "summary_distribution_time.Rmd")
 t_s_duplicate_within <- file.path(template_path, "summary_duplicate_within.Rmd")
@@ -108,6 +109,10 @@ split_time_spans_common <- function(df, ts1, ts1_from, ts1_to, ts2, ts2_from, ts
   lst <- list(t1, t2, t3, t4)
   names(lst) = c(ts1, ts2, ts3, ts4)
   lst
+}
+
+filter_profile_level_qc <- function(df) {
+  df %>% filter((time_qc == 1) & (position_qc %in% c(1, -128)))
 }
 
 filer_locations_common <- function(df, min_lon, max_lon, min_lat, max_lat) {
