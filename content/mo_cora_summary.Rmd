@@ -30,7 +30,16 @@ cat(res, sep = '\n')
 
 ---
 
-## 2. Descriptive Statistics of `r region_code1` CTD Data
+## 2. Profile level QC flags
+```{r, profile_level_qc, results = 'asis'}
+src <- knitr::knit_expand(t_s_time_location_qc, df=df_name)
+res <- knitr::knit_child(text = src, quiet = TRUE)
+cat(res, sep = '\n')
+```
+
+---
+
+## 3. Descriptive Statistics of `r region_code1` CTD Data
 ```{r, descriptive_stats, results = 'asis'}
 src <- knitr::knit_expand(t_s_descriptive_stats, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
@@ -39,7 +48,7 @@ cat(res, sep = '\n')
 
 ---
 
-## 3. Locations
+## 4. Locations
 ```{r, locations, results = 'asis'}
 src <- knitr::knit_expand(t_s_locations, plot_nrow=2, plot_height=10)
 res <- knitr::knit_child(text = src, quiet = TRUE)
@@ -48,7 +57,7 @@ cat(res, sep = '\n')
 
 ---
 
-## 4. Distribution of Profiles Over Time
+## 5. Distribution of Profiles Over Time
 ```{r, distribution_time, results = 'asis'}
 src <- knitr::knit_expand(t_s_distribution_time, plot_nrow=2, plot_height=10)
 res <- knitr::knit_child(text = src, quiet = TRUE)
@@ -57,7 +66,7 @@ cat(res, sep = '\n')
 
 ---
 
-## 5. Duplicate Profiles Within Platforms
+## 6. Duplicate Profiles Within Platforms
 ```{r, duplicate_within, results = 'asis'}
 src <- knitr::knit_expand(t_s_duplicate_within, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
@@ -72,7 +81,7 @@ cat(res, sep = '\n')
 
 ---
 
-## 6. Duplicate Profiles Across Platforms
+## 7. Duplicate Profiles Across Platforms
 ```{r, duplicate_across, results = 'asis'}
 src <- knitr::knit_expand(t_s_duplicate_across, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
@@ -87,7 +96,7 @@ cat(res, sep = '\n')
 
 ---
 
-## 7. Observation Counts By Profile
+## 8. Observation Counts By Profile
 ```{r, observation_counts, results = 'asis'}
 src <- knitr::knit_expand(t_s_observation_counts, plot_nrow=2, plot_height=10)
 res <- knitr::knit_child(text = src, quiet = TRUE)
