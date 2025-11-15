@@ -1,5 +1,5 @@
 ---
-title: "Mediterranean Sea In Situ Observations"
+title: "Mediterranean Sea Summary Report"
 description: |
   We provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
 site: distill::distill_website
