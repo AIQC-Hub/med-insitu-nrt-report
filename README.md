@@ -4,7 +4,7 @@ The site provides a collection of resources and summary reports containing stati
 
 ## Website
 
-The reports are hosted on [GitHub Pages](https://aiqc-hub.github.io/med-insitu-nrt-report/).
+The reports are hosted on [GitHub Pages](https://aiqc-hub.github.io/med-report/).
 
 ## Data Sources
 
