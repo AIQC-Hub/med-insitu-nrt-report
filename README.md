@@ -1,6 +1,6 @@
 # Summary Report for the Mediterranean Sea NRT and DM CTD Datasets
 
-We provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
+The site provides a collection of resources and summary reports containing statistics and other relevant information about the datasets.
 
 ## Website
 
