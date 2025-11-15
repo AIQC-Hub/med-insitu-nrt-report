@@ -17,6 +17,11 @@ r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_cora.Rmd", "summary_commo
 ```{r, import, child=file.path(r_func_path, r_funcs)}
 ```
 
+```{r, location_filtering1, include = FALSE}
+src <- knitr::knit_expand(t_location_filtering, df=df_name, df_filtered=df_filtered_name)
+res <- knitr::knit_child(text = src, quiet = TRUE)
+```
+
 ## 1. Basic Information
 ```{r, basic_info, results = 'asis'}
 res <- knitr::knit_expand(t_s_basic_info)
@@ -27,7 +32,7 @@ cat(res, sep = '\n')
 
 ## 2. Descriptive Statistics of `r region_code1` CTD Data
 ```{r, descriptive_stats, results = 'asis'}
-src <- knitr::knit_expand(t_s_descriptive_stats, df=df_name)
+src <- knitr::knit_expand(t_s_descriptive_stats, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```
@@ -54,13 +59,13 @@ cat(res, sep = '\n')
 
 ## 5. Duplicate Profiles Within Platforms
 ```{r, duplicate_within, results = 'asis'}
-src <- knitr::knit_expand(t_s_duplicate_within, df=df_name)
+src <- knitr::knit_expand(t_s_duplicate_within, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
 ```{r, duplicate_details1, results = 'asis'}
-src <- knitr::knit_expand(t_s_duplicate_within_details, df=df_name)
+src <- knitr::knit_expand(t_s_duplicate_within_details, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```
@@ -69,13 +74,13 @@ cat(res, sep = '\n')
 
 ## 6. Duplicate Profiles Across Platforms
 ```{r, duplicate_across, results = 'asis'}
-src <- knitr::knit_expand(t_s_duplicate_across, df=df_name)
+src <- knitr::knit_expand(t_s_duplicate_across, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```
 
 ```{r, duplicate_details2, results = 'asis'}
-src <- knitr::knit_expand(t_s_duplicate_across_details, df=df_name)
+src <- knitr::knit_expand(t_s_duplicate_across_details, df=df_filtered_name)
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```

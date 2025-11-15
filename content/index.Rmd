@@ -1,7 +1,7 @@
 ---
 title: "Mediterranean Sea In Situ Observations"
 description: |
-  Welcome to the site. Here, we provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
+  We provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
 site: distill::distill_website
 ---
 

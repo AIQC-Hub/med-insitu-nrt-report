@@ -2,8 +2,6 @@
 summary_table_original <- netcdf_summary_1({{df}})
 summary_table_original_2 <- netcdf_summary_2(summary_table_original)
 
-{{df_filtered_name}} <- filer_locations({{df}})
-
 summary_table_filtered1 <- netcdf_summary_1({{df_filtered_name}})
 summary_table_filtered1_2 <- netcdf_summary_2(summary_table_filtered1)
 

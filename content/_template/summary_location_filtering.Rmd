@@ -60,9 +60,3 @@ print(plot_grid(p_loc_original,
  - **Number of platform**: `r formatC(nrow(summary_table_filtered2_2), big.mark=",")`
  - **Number of profiles**: `r formatC(sum(summary_table_filtered2_2$profile_count), big.mark=",")`
  - **Number of observations**: `r formatC(sum(summary_table_filtered2_2$obs_count), big.mark=",")`
-
-```{r, t_summary_loc_filter3, echo = FALSE, message = FALSE, warning = FALSE}
-
-{{df_filtered_name}} <- df_filtered2
-
-```
