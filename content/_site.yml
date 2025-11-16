@@ -63,5 +63,11 @@ navbar:
           href: mo_gl_psal_qc.html
         - text: "Psal QC (CORA)"
           href: mo_cora_psal_qc.html
+    - text: "NRT vs CORA"
+      menu:
+        - text: "NRT (MO) vs CORA"
+          href: mo_nrt_mo_vs_cora.html
+        - text: "NRT (GL) vs CORA"
+          href: mo_nrt_gl_vs_cora.html
 
 output: distill::distill_article
