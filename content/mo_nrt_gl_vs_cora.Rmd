@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo=FALSE)
 
 # Common functions
 r_func_path <- "./_func"
-r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_gl.Rmd", "summary_common.Rmd", "comp.Rmd")
+r_funcs <- c("libraries.Rmd", "common.Rmd", "common_mo_gl.Rmd", "summary_common.Rmd", "comp.Rmd", "qc.Rmd")
 r_cora_common <- "common_mo_cora.Rmd"
 ```
 
@@ -61,6 +61,16 @@ cat(res, sep = '\n')
 
 ```{r, nrt_cora_intersection, results = 'asis'}
 src <- knitr::knit_expand(t_comp_intersection, df_nrt="df_nrt", df_cora="df_cora")
+res <- knitr::knit_child(text = src, quiet = TRUE)
+cat(res, sep = '\n')
+```
+
+---
+
+## 4. QC Flag Counts (Strict Criteria)
+
+```{r, nrt_cora_qc_flag_counts, results = 'asis'}
+src <- knitr::knit_expand(t_comp_qc_counts, df_nrt="df_nrt", df_cora="df_cora")
 res <- knitr::knit_child(text = src, quiet = TRUE)
 cat(res, sep = '\n')
 ```

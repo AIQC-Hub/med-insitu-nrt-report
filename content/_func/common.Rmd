@@ -47,6 +47,7 @@ t_comp_basic_info_item <- file.path(template_path, "comp_basic_info_item.Rmd")
 t_comp_basic_info <- file.path(template_path, "comp_basic_info.Rmd")
 t_comp_df_counts <- file.path(template_path, "comp_df_counts.Rmd")
 t_comp_intersection <- file.path(template_path, "comp_intersection.Rmd")
+t_comp_qc_counts <- file.path(template_path, "comp_qc_counts.Rmd")
 
 # Kable wrappers
 kbl_table <- function(x) {
