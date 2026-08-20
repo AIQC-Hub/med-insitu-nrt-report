@@ -1,0 +1,30 @@
+---
+title: "Mediterranean Sea Summary Report"
+description: |
+  We provide a collection of resources and summary reports containing statistics and other relevant information about the datasets.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Contents
+
+1. Profile Summary
+    - [Profile Summary (MO)](./mo_summary.qmd)
+    - [Profile Summary (GL)](./mo_gl_summary.qmd)
+    - [Profile Summary (CORA)](./mo_cora_summary.qmd)
+1. Temperature
+    - [Temperature (MO)](./mo_temp.qmd)
+    - [Temperature (GL)](./mo_gl_temp.qmd)
+    - [Temperature (CORA)](./mo_cora_temp.qmd)
+    - [Temperature QC (MO)](./mo_temp_qc.qmd)
+    - [Temperature QC (GL)](./mo_gl_temp_qc.qmd)
+    - [Temperature QC (CORA)](./mo_cora_temp_qc.qmd)
+1. Salinity
+    - [Salinity (MO)](./mo_psal.qmd)
+    - [Salinity (GL)](./mo_gl_psal.qmd)
+    - [Salinity (CORA)](./mo_cora_psal.qmd)
+    - [Salinity QC (MO)](./mo_psal_qc.qmd)
+    - [Salinity QC (GL)](./mo_gl_psal_qc.qmd)
+    - [Salinity QC (CORA)](./mo_cora_psal_qc.qmd)

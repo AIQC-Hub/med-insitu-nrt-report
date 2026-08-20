@@ -1,0 +1,1402 @@
+{
+  "df_mo_gl": {
+    "digest": "cb8b51326f3d3ff5",
+    "stats": {
+      "rows": 73028,
+      "platforms": 175,
+      "profiles": 73028,
+      "observations": 29862720
+    },
+    "ncol": 68,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "0e6c9b08fe059692"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "4551f61f385de523"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "21532607aeec79d5"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "aaf0eebcaa9daf44"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "f5808c72a39a7ed4"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "c18aa420c2493ac4"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "26da9d52b5d2fb83"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "260392e8ae142749"
+      },
+      {
+        "name": "observation_no_na_count",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "observation_no_non_na_count",
+        "type": "integer",
+        "digest": "260392e8ae142749"
+      },
+      {
+        "name": "observation_no_mean",
+        "type": "numeric",
+        "digest": "09bec685958d659a"
+      },
+      {
+        "name": "observation_no_median",
+        "type": "numeric",
+        "digest": "c8197e59c2f636f5"
+      },
+      {
+        "name": "observation_no_min",
+        "type": "numeric",
+        "digest": "5867b9c6f4179cb2"
+      },
+      {
+        "name": "observation_no_max",
+        "type": "numeric",
+        "digest": "27c57e747dbd5da8"
+      },
+      {
+        "name": "temp_count",
+        "type": "integer",
+        "digest": "260392e8ae142749"
+      },
+      {
+        "name": "temp_na_count",
+        "type": "integer",
+        "digest": "087194df69561b3f"
+      },
+      {
+        "name": "temp_non_na_count",
+        "type": "integer",
+        "digest": "9fdf93f3d747214f"
+      },
+      {
+        "name": "temp_mean",
+        "type": "numeric",
+        "digest": "9ad577042f7c9bb7"
+      },
+      {
+        "name": "temp_median",
+        "type": "numeric",
+        "digest": "7903f4b27555aa97"
+      },
+      {
+        "name": "temp_min",
+        "type": "numeric",
+        "digest": "c31f3dfd9d62c285"
+      },
+      {
+        "name": "temp_max",
+        "type": "numeric",
+        "digest": "b6cd0a750d4a60ed"
+      },
+      {
+        "name": "temp_qc_0",
+        "type": "integer",
+        "digest": "17af0d202d6d7cf6"
+      },
+      {
+        "name": "temp_qc_1",
+        "type": "integer",
+        "digest": "ec061ad38327df24"
+      },
+      {
+        "name": "temp_qc_2",
+        "type": "integer",
+        "digest": "e8fc3509bb1649d0"
+      },
+      {
+        "name": "temp_qc_3",
+        "type": "integer",
+        "digest": "dbf02ae89df5a04d"
+      },
+      {
+        "name": "temp_qc_4",
+        "type": "integer",
+        "digest": "37547ce8d71e02e4"
+      },
+      {
+        "name": "temp_qc_5",
+        "type": "integer",
+        "digest": "0a678cd5a97ab5da"
+      },
+      {
+        "name": "temp_qc_6",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "temp_qc_7",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "temp_qc_8",
+        "type": "integer",
+        "digest": "d26efbe534815d32"
+      },
+      {
+        "name": "temp_qc_9",
+        "type": "integer",
+        "digest": "087194df69561b3f"
+      },
+      {
+        "name": "temp_qc_A",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "psal_count",
+        "type": "integer",
+        "digest": "260392e8ae142749"
+      },
+      {
+        "name": "psal_na_count",
+        "type": "integer",
+        "digest": "be6f8c5330c514d9"
+      },
+      {
+        "name": "psal_non_na_count",
+        "type": "integer",
+        "digest": "1d99f91b8a88a38c"
+      },
+      {
+        "name": "psal_mean",
+        "type": "numeric",
+        "digest": "bc0b40b231d8b282"
+      },
+      {
+        "name": "psal_median",
+        "type": "numeric",
+        "digest": "c195fa550af17983"
+      },
+      {
+        "name": "psal_min",
+        "type": "numeric",
+        "digest": "9b9a562593b83860"
+      },
+      {
+        "name": "psal_max",
+        "type": "numeric",
+        "digest": "b9f9ca119046578a"
+      },
+      {
+        "name": "psal_qc_0",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "psal_qc_1",
+        "type": "integer",
+        "digest": "4859057d4bb90d27"
+      },
+      {
+        "name": "psal_qc_2",
+        "type": "integer",
+        "digest": "5579f8687c76f617"
+      },
+      {
+        "name": "psal_qc_3",
+        "type": "integer",
+        "digest": "16aec4bea2cff526"
+      },
+      {
+        "name": "psal_qc_4",
+        "type": "integer",
+        "digest": "7911aa44b6ed2c37"
+      },
+      {
+        "name": "psal_qc_5",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "psal_qc_6",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "psal_qc_7",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "psal_qc_8",
+        "type": "integer",
+        "digest": "0f0ba2f2131b0cab"
+      },
+      {
+        "name": "psal_qc_9",
+        "type": "integer",
+        "digest": "be6f8c5330c514d9"
+      },
+      {
+        "name": "psal_qc_A",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_count",
+        "type": "integer",
+        "digest": "260392e8ae142749"
+      },
+      {
+        "name": "pres_na_count",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_non_na_count",
+        "type": "integer",
+        "digest": "260392e8ae142749"
+      },
+      {
+        "name": "pres_mean",
+        "type": "numeric",
+        "digest": "b31292429bcb63af"
+      },
+      {
+        "name": "pres_median",
+        "type": "numeric",
+        "digest": "3b9b6d879cf24bce"
+      },
+      {
+        "name": "pres_min",
+        "type": "numeric",
+        "digest": "e6a01035f4fba38a"
+      },
+      {
+        "name": "pres_max",
+        "type": "numeric",
+        "digest": "2a8c6fee4dfb97ac"
+      },
+      {
+        "name": "pres_qc_0",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_1",
+        "type": "integer",
+        "digest": "e6ca468e353683fa"
+      },
+      {
+        "name": "pres_qc_2",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_3",
+        "type": "integer",
+        "digest": "4d618f4b3cc51e10"
+      },
+      {
+        "name": "pres_qc_4",
+        "type": "integer",
+        "digest": "45fdc0a3c3f1f210"
+      },
+      {
+        "name": "pres_qc_5",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_6",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_7",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_8",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_9",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      },
+      {
+        "name": "pres_qc_A",
+        "type": "integer",
+        "digest": "7c77e82af09dca0f"
+      }
+    ]
+  },
+  "df_mo_gl_filtered": {
+    "digest": "112d3e94e73204e3",
+    "stats": {
+      "rows": 71804,
+      "platforms": 174,
+      "profiles": 71804,
+      "observations": 29842569
+    },
+    "ncol": 68,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "50c493c69f66b4e6"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "ba52577133d1891d"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "28acb99bd86d271d"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "e5a29c33ac6d4803"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "e5a29c33ac6d4803"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "0714fb3142c1c881"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "8c4ef937c36fe36f"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "b361c6af7d15d6e3"
+      },
+      {
+        "name": "observation_no_na_count",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "observation_no_non_na_count",
+        "type": "integer",
+        "digest": "b361c6af7d15d6e3"
+      },
+      {
+        "name": "observation_no_mean",
+        "type": "numeric",
+        "digest": "bdb0d766d24d9bf2"
+      },
+      {
+        "name": "observation_no_median",
+        "type": "numeric",
+        "digest": "97e60238a3b5266c"
+      },
+      {
+        "name": "observation_no_min",
+        "type": "numeric",
+        "digest": "8828a79289996114"
+      },
+      {
+        "name": "observation_no_max",
+        "type": "numeric",
+        "digest": "d7610e504c16d6aa"
+      },
+      {
+        "name": "temp_count",
+        "type": "integer",
+        "digest": "b361c6af7d15d6e3"
+      },
+      {
+        "name": "temp_na_count",
+        "type": "integer",
+        "digest": "ee6c25b0421e7a98"
+      },
+      {
+        "name": "temp_non_na_count",
+        "type": "integer",
+        "digest": "cfa56ec419e1c715"
+      },
+      {
+        "name": "temp_mean",
+        "type": "numeric",
+        "digest": "ea78c68e28fa89cf"
+      },
+      {
+        "name": "temp_median",
+        "type": "numeric",
+        "digest": "8c83c4f24c302fb1"
+      },
+      {
+        "name": "temp_min",
+        "type": "numeric",
+        "digest": "035afa322ccc02d7"
+      },
+      {
+        "name": "temp_max",
+        "type": "numeric",
+        "digest": "10373d480dae20f6"
+      },
+      {
+        "name": "temp_qc_0",
+        "type": "integer",
+        "digest": "821620643c0b9f08"
+      },
+      {
+        "name": "temp_qc_1",
+        "type": "integer",
+        "digest": "d60867bf4cf409b6"
+      },
+      {
+        "name": "temp_qc_2",
+        "type": "integer",
+        "digest": "0b9079974b1db63f"
+      },
+      {
+        "name": "temp_qc_3",
+        "type": "integer",
+        "digest": "ef069a7254066866"
+      },
+      {
+        "name": "temp_qc_4",
+        "type": "integer",
+        "digest": "ad7d24fec8051cce"
+      },
+      {
+        "name": "temp_qc_5",
+        "type": "integer",
+        "digest": "5a072e4b3f8483a3"
+      },
+      {
+        "name": "temp_qc_6",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "temp_qc_7",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "temp_qc_8",
+        "type": "integer",
+        "digest": "7f9bdf098b056d79"
+      },
+      {
+        "name": "temp_qc_9",
+        "type": "integer",
+        "digest": "ee6c25b0421e7a98"
+      },
+      {
+        "name": "temp_qc_A",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "psal_count",
+        "type": "integer",
+        "digest": "b361c6af7d15d6e3"
+      },
+      {
+        "name": "psal_na_count",
+        "type": "integer",
+        "digest": "b7a24fdad8b318b3"
+      },
+      {
+        "name": "psal_non_na_count",
+        "type": "integer",
+        "digest": "149e959083d84bca"
+      },
+      {
+        "name": "psal_mean",
+        "type": "numeric",
+        "digest": "104cc47dc638b188"
+      },
+      {
+        "name": "psal_median",
+        "type": "numeric",
+        "digest": "da6f9cf6d429a205"
+      },
+      {
+        "name": "psal_min",
+        "type": "numeric",
+        "digest": "87aa6ff4a2d123f3"
+      },
+      {
+        "name": "psal_max",
+        "type": "numeric",
+        "digest": "6b69323f236b0e05"
+      },
+      {
+        "name": "psal_qc_0",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "psal_qc_1",
+        "type": "integer",
+        "digest": "5f97c15fec4d24ed"
+      },
+      {
+        "name": "psal_qc_2",
+        "type": "integer",
+        "digest": "fd0bdcb84317beee"
+      },
+      {
+        "name": "psal_qc_3",
+        "type": "integer",
+        "digest": "8b0ff22dd32bf6bb"
+      },
+      {
+        "name": "psal_qc_4",
+        "type": "integer",
+        "digest": "a520c1ca59f03bcf"
+      },
+      {
+        "name": "psal_qc_5",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "psal_qc_6",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "psal_qc_7",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "psal_qc_8",
+        "type": "integer",
+        "digest": "fcd22099733eb36d"
+      },
+      {
+        "name": "psal_qc_9",
+        "type": "integer",
+        "digest": "b7a24fdad8b318b3"
+      },
+      {
+        "name": "psal_qc_A",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_count",
+        "type": "integer",
+        "digest": "b361c6af7d15d6e3"
+      },
+      {
+        "name": "pres_na_count",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_non_na_count",
+        "type": "integer",
+        "digest": "b361c6af7d15d6e3"
+      },
+      {
+        "name": "pres_mean",
+        "type": "numeric",
+        "digest": "aaf407783f6c62f4"
+      },
+      {
+        "name": "pres_median",
+        "type": "numeric",
+        "digest": "ea8facb4bffc772f"
+      },
+      {
+        "name": "pres_min",
+        "type": "numeric",
+        "digest": "800f20076ca8dc0c"
+      },
+      {
+        "name": "pres_max",
+        "type": "numeric",
+        "digest": "e86678066edcb513"
+      },
+      {
+        "name": "pres_qc_0",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_1",
+        "type": "integer",
+        "digest": "33402998b3ae2fd9"
+      },
+      {
+        "name": "pres_qc_2",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_3",
+        "type": "integer",
+        "digest": "a4094a093fd1beb0"
+      },
+      {
+        "name": "pres_qc_4",
+        "type": "integer",
+        "digest": "154ffdb4977cd759"
+      },
+      {
+        "name": "pres_qc_5",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_6",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_7",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_8",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_9",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      },
+      {
+        "name": "pres_qc_A",
+        "type": "integer",
+        "digest": "767feb45cc479583"
+      }
+    ]
+  },
+  "df_mo_gl_qc1_temp": {
+    "digest": "d9960a6655dd586f",
+    "stats": {
+      "rows": 72731,
+      "platforms": 175,
+      "profiles": 72731,
+      "observations": 29450772
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "9a48023c34ea6287"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "7488e8a500ea4697"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "f3b6095f67bb6a4d"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "bd68e302fd1ea563"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "8326c7a83cf04bc9"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "19dc53230982cea0"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "f873d20fa80c6568"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "8edd7ca6a23c60e1"
+      },
+      {
+        "name": "temp_count",
+        "type": "integer",
+        "digest": "8edd7ca6a23c60e1"
+      },
+      {
+        "name": "temp_na_count",
+        "type": "integer",
+        "digest": "156fdb46f2a2f835"
+      },
+      {
+        "name": "temp_non_na_count",
+        "type": "integer",
+        "digest": "8edd7ca6a23c60e1"
+      },
+      {
+        "name": "temp_mean",
+        "type": "numeric",
+        "digest": "3f86d31fe714da1a"
+      },
+      {
+        "name": "temp_median",
+        "type": "numeric",
+        "digest": "3d616c2c1bd64fcb"
+      },
+      {
+        "name": "temp_min",
+        "type": "numeric",
+        "digest": "54584025cdb0eacd"
+      },
+      {
+        "name": "temp_max",
+        "type": "numeric",
+        "digest": "8585b5639a449002"
+      }
+    ]
+  },
+  "df_mo_gl_qc1_temp_filtered": {
+    "digest": "b0d3f9c1c3f7a209",
+    "stats": {
+      "rows": 71507,
+      "platforms": 174,
+      "profiles": 71507,
+      "observations": 29431184
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "3dc0214817a1505e"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "a995d82a96ec4b6b"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "d8bad8b6ee88ee8c"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "a76cceeb1f86e373"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "a76cceeb1f86e373"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "545b3e77cf7e9ac2"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "84848e82cef6e7e4"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "5b2b2785d7cd0721"
+      },
+      {
+        "name": "temp_count",
+        "type": "integer",
+        "digest": "5b2b2785d7cd0721"
+      },
+      {
+        "name": "temp_na_count",
+        "type": "integer",
+        "digest": "8ea1cf3e20226125"
+      },
+      {
+        "name": "temp_non_na_count",
+        "type": "integer",
+        "digest": "5b2b2785d7cd0721"
+      },
+      {
+        "name": "temp_mean",
+        "type": "numeric",
+        "digest": "78286d4ac08ec433"
+      },
+      {
+        "name": "temp_median",
+        "type": "numeric",
+        "digest": "64f4834f987841df"
+      },
+      {
+        "name": "temp_min",
+        "type": "numeric",
+        "digest": "82816767fe78463f"
+      },
+      {
+        "name": "temp_max",
+        "type": "numeric",
+        "digest": "aadf19666a821a58"
+      }
+    ]
+  },
+  "df_mo_gl_qc4_temp": {
+    "digest": "b97a4ad4a8cc90bb",
+    "stats": {
+      "rows": 12686,
+      "platforms": 81,
+      "profiles": 12686,
+      "observations": 210947
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "2ad2081e19e84dea"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "fd7dbce0226a5d37"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "faa636cfc44f7e2f"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "6ef561916b68c0e2"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "fa8b489236df6f51"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "160df17ddd6abb8e"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "cc701fe0b1d5c638"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "29ef2c6455edefff"
+      },
+      {
+        "name": "temp_count",
+        "type": "integer",
+        "digest": "29ef2c6455edefff"
+      },
+      {
+        "name": "temp_na_count",
+        "type": "integer",
+        "digest": "be2c7f3ade456458"
+      },
+      {
+        "name": "temp_non_na_count",
+        "type": "integer",
+        "digest": "29ef2c6455edefff"
+      },
+      {
+        "name": "temp_mean",
+        "type": "numeric",
+        "digest": "9427fe9c77d899c5"
+      },
+      {
+        "name": "temp_median",
+        "type": "numeric",
+        "digest": "08dd9c09c5e60214"
+      },
+      {
+        "name": "temp_min",
+        "type": "numeric",
+        "digest": "7e2b4fe7f2b6b7cc"
+      },
+      {
+        "name": "temp_max",
+        "type": "numeric",
+        "digest": "6053bfba04373493"
+      }
+    ]
+  },
+  "df_mo_gl_qc4_temp_filtered": {
+    "digest": "a2a79c33267afb35",
+    "stats": {
+      "rows": 12432,
+      "platforms": 80,
+      "profiles": 12432,
+      "observations": 210529
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "af96b8819069e99f"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "076836facaf70294"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "be2e5b41acef59c7"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "f818fbc1051768db"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "f818fbc1051768db"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "045540f6d32bb160"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "bc952dcbdfcc6159"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "4de5e3eaa9193464"
+      },
+      {
+        "name": "temp_count",
+        "type": "integer",
+        "digest": "4de5e3eaa9193464"
+      },
+      {
+        "name": "temp_na_count",
+        "type": "integer",
+        "digest": "35e35d5a2437a281"
+      },
+      {
+        "name": "temp_non_na_count",
+        "type": "integer",
+        "digest": "4de5e3eaa9193464"
+      },
+      {
+        "name": "temp_mean",
+        "type": "numeric",
+        "digest": "42a9102c158572dc"
+      },
+      {
+        "name": "temp_median",
+        "type": "numeric",
+        "digest": "d01bb7d5c46aec79"
+      },
+      {
+        "name": "temp_min",
+        "type": "numeric",
+        "digest": "9a009567bbf0fca2"
+      },
+      {
+        "name": "temp_max",
+        "type": "numeric",
+        "digest": "3d886e2b4f404b1b"
+      }
+    ]
+  },
+  "df_mo_gl_qc1_psal": {
+    "digest": "53f50e7b3bbfb38f",
+    "stats": {
+      "rows": 72666,
+      "platforms": 175,
+      "profiles": 72666,
+      "observations": 29333771
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "9df8c87c6d04cc8b"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "1e251cb7cc404d82"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "db7848f7ddd417b9"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "0ca3c763b4ef0df5"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "4e9f720057fadac3"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "7db27d33ddb9cdd3"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "4b396e84090ac125"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "a76c6ce7501a13e1"
+      },
+      {
+        "name": "psal_count",
+        "type": "integer",
+        "digest": "a76c6ce7501a13e1"
+      },
+      {
+        "name": "psal_na_count",
+        "type": "integer",
+        "digest": "5f8605edbbc85171"
+      },
+      {
+        "name": "psal_non_na_count",
+        "type": "integer",
+        "digest": "a76c6ce7501a13e1"
+      },
+      {
+        "name": "psal_mean",
+        "type": "numeric",
+        "digest": "13bac4570581461e"
+      },
+      {
+        "name": "psal_median",
+        "type": "numeric",
+        "digest": "0cc8954e013380ae"
+      },
+      {
+        "name": "psal_min",
+        "type": "numeric",
+        "digest": "11af8cd027a4412d"
+      },
+      {
+        "name": "psal_max",
+        "type": "numeric",
+        "digest": "875e69541325a057"
+      }
+    ]
+  },
+  "df_mo_gl_qc1_psal_filtered": {
+    "digest": "448d4308583ecc6d",
+    "stats": {
+      "rows": 71444,
+      "platforms": 174,
+      "profiles": 71444,
+      "observations": 29314449
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "a0160f816f24d1c5"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "3cf7faac16fb5ee1"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "ff05ce635f6b30ef"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "6aa3912542accdba"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "6aa3912542accdba"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "0b1f8205ec10cdb4"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "72aa64cbe86b76b3"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "515a7d6eda55045e"
+      },
+      {
+        "name": "psal_count",
+        "type": "integer",
+        "digest": "515a7d6eda55045e"
+      },
+      {
+        "name": "psal_na_count",
+        "type": "integer",
+        "digest": "5ffc77cfe13c1917"
+      },
+      {
+        "name": "psal_non_na_count",
+        "type": "integer",
+        "digest": "515a7d6eda55045e"
+      },
+      {
+        "name": "psal_mean",
+        "type": "numeric",
+        "digest": "937221279b6af30e"
+      },
+      {
+        "name": "psal_median",
+        "type": "numeric",
+        "digest": "495ad29ab115605b"
+      },
+      {
+        "name": "psal_min",
+        "type": "numeric",
+        "digest": "44d89bc8facd6cc4"
+      },
+      {
+        "name": "psal_max",
+        "type": "numeric",
+        "digest": "867f8b50a3558279"
+      }
+    ]
+  },
+  "df_mo_gl_qc4_psal": {
+    "digest": "aa1b08171256f7ac",
+    "stats": {
+      "rows": 13529,
+      "platforms": 91,
+      "profiles": 13529,
+      "observations": 261224
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "e51b6896d2b667bb"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "c2543fa0781d109a"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "19f5f5337ca9c0a6"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "a41d9ab71dcfdbb4"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "c7e598c05e0aa4ae"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "3670a20d4054c44e"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "a34c9f0a233bb9df"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "cf2ee156a0e3f05d"
+      },
+      {
+        "name": "psal_count",
+        "type": "integer",
+        "digest": "cf2ee156a0e3f05d"
+      },
+      {
+        "name": "psal_na_count",
+        "type": "integer",
+        "digest": "f1443aa9b0576119"
+      },
+      {
+        "name": "psal_non_na_count",
+        "type": "integer",
+        "digest": "cf2ee156a0e3f05d"
+      },
+      {
+        "name": "psal_mean",
+        "type": "numeric",
+        "digest": "8dc7fdc2eaf30310"
+      },
+      {
+        "name": "psal_median",
+        "type": "numeric",
+        "digest": "737b996e828f2b22"
+      },
+      {
+        "name": "psal_min",
+        "type": "numeric",
+        "digest": "fd3b7b3f11ec331d"
+      },
+      {
+        "name": "psal_max",
+        "type": "numeric",
+        "digest": "a7b0dc32bfb326ec"
+      }
+    ]
+  },
+  "df_mo_gl_qc4_psal_filtered": {
+    "digest": "4c14cb7009cde7c4",
+    "stats": {
+      "rows": 13271,
+      "platforms": 90,
+      "profiles": 13271,
+      "observations": 260755
+    },
+    "ncol": 15,
+    "columns": [
+      {
+        "name": "platform_code",
+        "type": "character",
+        "digest": "8ac9d8d19f62e162"
+      },
+      {
+        "name": "profile_no",
+        "type": "integer",
+        "digest": "12b66dd619c6c57c"
+      },
+      {
+        "name": "profile_timestamp",
+        "type": "POSIXct",
+        "digest": "6ac571e41c74153b"
+      },
+      {
+        "name": "time_qc",
+        "type": "integer",
+        "digest": "c116432c19ace314"
+      },
+      {
+        "name": "position_qc",
+        "type": "integer",
+        "digest": "c116432c19ace314"
+      },
+      {
+        "name": "longitude",
+        "type": "numeric",
+        "digest": "2634f68cc0daaad6"
+      },
+      {
+        "name": "latitude",
+        "type": "numeric",
+        "digest": "8d9a89505baf949f"
+      },
+      {
+        "name": "observation_no_count",
+        "type": "integer",
+        "digest": "f40b783b7328b23a"
+      },
+      {
+        "name": "psal_count",
+        "type": "integer",
+        "digest": "f40b783b7328b23a"
+      },
+      {
+        "name": "psal_na_count",
+        "type": "integer",
+        "digest": "87afca7d8d323a5b"
+      },
+      {
+        "name": "psal_non_na_count",
+        "type": "integer",
+        "digest": "f40b783b7328b23a"
+      },
+      {
+        "name": "psal_mean",
+        "type": "numeric",
+        "digest": "70a0d0a16bb97364"
+      },
+      {
+        "name": "psal_median",
+        "type": "numeric",
+        "digest": "b96b5d21fc771db1"
+      },
+      {
+        "name": "psal_min",
+        "type": "numeric",
+        "digest": "fa05bd9ebca46373"
+      },
+      {
+        "name": "psal_max",
+        "type": "numeric",
+        "digest": "2b8d91e57937bdaf"
+      }
+    ]
+  }
+}

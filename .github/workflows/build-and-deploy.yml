@@ -1,4 +1,4 @@
-name: Build and Deploy Distill Site
+name: Build and Deploy Quarto Site
 
 # Run this workflow on pushes to the main branch
 on:
@@ -62,25 +62,15 @@ jobs:
         with:
           packages:
             any::rmarkdown
-            any::distill
-            any::fontawesome
-            any::kableExtra
-            any::DT
-            any::htmltools
-            any::arrow
-            any::data.table
-            any::tidyverse
-            any::rlang
-            any::ggpubr
-            any::cowplot
-            any::scales
-            any::maps
-            any::xaringanExtra
-            any::hexbin
+            github::AIQC-Hub/aiqcreport@v0.1.0
 
-      # 6. Build the distill site using an R command
+      # 6. Set up Quarto
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # 7. Build the site
       - name: Build site
-        run: R -e 'rmarkdown::render_site(input = "content", encoding = "UTF-8")'
+        run: quarto render content
 
       # 7. Configure GitHub Pages
       - name: Setup Pages
@@ -90,8 +80,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This MUST match the `output_dir` from your _site.yml
-          # The default for distill is '_site'. We use 'docs' here based on your description.
+          # Must match `project: output-dir` in content/_quarto.yml
           path: './content/docs'
 
       # 9. Deploy the artifact to GitHub Pages

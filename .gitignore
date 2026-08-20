@@ -6,4 +6,5 @@
 _site
 .idea
 data
-docs
+content/docs/
+tests/baseline-docs/
