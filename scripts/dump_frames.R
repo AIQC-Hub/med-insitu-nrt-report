@@ -1,9 +1,9 @@
 #!/usr/bin/env Rscript
 #
 # Fingerprint every data frame this site's pages load. The work lives in
-# aiqcreport::fingerprint_frames(); this only names the datasets.
+# reportlib::fingerprint_frames(); this only names the datasets.
 #
-suppressPackageStartupMessages(library(aiqcreport))
+suppressPackageStartupMessages(library(reportlib))
 
 args <- commandArgs(trailingOnly = TRUE)
 repo <- normalizePath(file.path(dirname(sub("^--file=", "",

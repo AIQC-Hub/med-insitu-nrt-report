@@ -1,10 +1,10 @@
 #!/usr/bin/env Rscript
 #
 # Build this site's profile-level summary parquet from the seastamp
-# observation-level files. The work lives in aiqcreport::build_summaries();
+# observation-level files. The work lives in reportlib::build_summaries();
 # this only names the datasets.
 #
-suppressPackageStartupMessages(library(aiqcreport))
+suppressPackageStartupMessages(library(reportlib))
 
 args <- commandArgs(trailingOnly = TRUE)
 
