@@ -15,7 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   when any of them moves. The freeze directory is git-ignored.
 - **The pressure pages are back**: `mo_pres.qmd`, `mo_gl_pres.qmd`, `mo_cora_pres.qmd` and their
   `_qc` counterparts, with a **Pressure** menu restored to the navbar between Profile Summary
-  and Temperature. Each is its temperature page with the variable swapped.
+  and Temperature, and a **Pressure** group in the home page's Contents list. Each is its
+  temperature page with the variable swapped.
 
 ### Changed
 - Input data now comes from `ctddump` + `seastamp` instead of the R-built summaries published as
