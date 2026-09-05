@@ -73,6 +73,11 @@ committed fingerprints. `mo_pres.qmd` is the one page that reaches the empty-fla
   "Duplicate Profiles Within Platforms" and "Duplicate Profiles Across Platforms".
 
 ### Fixed
+- The table scroll bars added in the previous release survive the move to `reportlib`.
+  They lived in `content/_func/common.Rmd`, which this migration deletes, and the package was
+  branched from before that commit -- so wide `kable` and `DT` tables would have gone back to
+  clipping. `kbl_table()` and `create_dt_summary_tab()` carry them now; the pin moves to
+  `reportlib` v0.1.11.
 - The navbar title linked to the AIQC portal instead of this site's home page, so nothing in the
   menu bar led back to the index. Quarto folds the logo and the title into a single brand link,
   which `logo-href` then claimed in full; Distill kept the two apart. The title is now an ordinary
@@ -82,6 +87,9 @@ committed fingerprints. `mo_pres.qmd` is the one page that reaches the empty-fla
   stray dash for its four headline numbers. `nrt_mo` has no QC 4 pressure observation at all,
   which is how this surfaced. Needs `reportlib` v0.1.10.
 
+## [0.2.3] - 2025-11-18
+### Added
+- Scroll bars to all tables
 
 ## [0.2.2] - 2025-11-17
 ### Added
