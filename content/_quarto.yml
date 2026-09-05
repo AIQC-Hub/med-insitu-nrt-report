@@ -42,6 +42,21 @@ website:
         href: mo_gl_summary.qmd
       - text: Summary (CORA)
         href: mo_cora_summary.qmd
+    - text: Pressure
+      menu:
+      - text: Pres (MO)
+        href: mo_pres.qmd
+      - text: Pres (GL)
+        href: mo_gl_pres.qmd
+      - text: Pres (CORA)
+        href: mo_cora_pres.qmd
+      - text: '---'
+      - text: Pres QC (MO)
+        href: mo_pres_qc.qmd
+      - text: Pres QC (GL)
+        href: mo_gl_pres_qc.qmd
+      - text: Pres QC (CORA)
+        href: mo_cora_pres_qc.qmd
     - text: Temperature
       menu:
       - text: Temp (MO)

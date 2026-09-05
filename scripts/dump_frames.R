@@ -12,9 +12,9 @@ cfg  <- yaml::read_yaml(file.path(repo, "config.yml"))$data
 
 ok <- fingerprint_frames(
   datasets = list(
-    mo      = list(common = "common_mo.Rmd",      vars = c("temp", "psal")),
-    mo_gl   = list(common = "common_mo_gl.Rmd",   vars = c("temp", "psal")),
-    mo_cora = list(common = "common_mo_cora.Rmd", vars = c("temp", "psal"))
+    mo      = list(common = "common_mo.Rmd",      vars = c("temp", "psal", "pres")),
+    mo_gl   = list(common = "common_mo_gl.Rmd",   vars = c("temp", "psal", "pres")),
+    mo_cora = list(common = "common_mo_cora.Rmd", vars = c("temp", "psal", "pres"))
   ),
   func_dir = file.path(repo, "content", "_func"),
   data_dir = Sys.getenv("ARC_DATA_DIR", unset = cfg$summary_dir),
