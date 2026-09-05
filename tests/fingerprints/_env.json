@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-20T23:28:48+0200",
-  "git_commit": "f924db4d985d5841443d2e50d4b00eef820af34f",
-  "reportlib": "0.1.0",
+  "generated": "2026-09-05T21:35:43+0200",
+  "git_commit": "958233c15d8085fd7a7413c98a3bd143dbb4601b",
+  "reportlib": "0.1.7",
   "R": "4.4.1",
   "arrow": "23.0.1.2",
   "dplyr": "1.2.1",
