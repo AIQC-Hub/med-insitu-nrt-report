@@ -17,6 +17,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `content/_quarto.yml`, and xaringanExtra panelsets became Quarto `::: {.panel-tabset}`.
 - The shared functions and templates moved to the **`reportlib`** package. This repo now holds
   only its pages, `_func/common_site.Rmd`, its region files and `_quarto.yml`.
+- The QC tabs now open on **Good (QC == 1)**, followed by **Bad (QC == 4)** and then
+  **All**, so a section leads with the QC-1 data rather than the unfiltered mixture.
+  The order lives in `reportlib`; the pin moves to v0.1.3.
 
 ### Removed
 - Pressure pages and the NRT vs CORA comparison pages.
