@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
+
+Everything below was re-rendered end to end against `reportlib` v0.1.10 on 2026-09-06, from an
+empty `content/_freeze/` and `content/docs/`: 22 pages and 124 figures in 263s, no chunk error and
+no unresolved link or image on any page, and `scripts/dump_frames.R --check` clean against the
+committed fingerprints. `mo_pres.qmd` is the one page that reaches the empty-flag notice below --
+`nrt_mo` has no QC 4 pressure observation -- and it prints the sentence rather than `Inf`/`NaN`.
+
 ### Added
 - `scripts/build_summaries.R` and `scripts/dump_frames.R`, thin wrappers over
   `reportlib::build_summaries()` and `reportlib::fingerprint_frames()`.
