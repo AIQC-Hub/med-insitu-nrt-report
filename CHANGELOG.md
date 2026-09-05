@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - `scripts/build_summaries.R` and `scripts/dump_frames.R`, thin wrappers over
   `reportlib::build_summaries()` and `reportlib::fingerprint_frames()`.
+- A **Source on GitHub** link in the navbar, pointing at this repo.
 
 ### Changed
 - Input data now comes from `ctddump` + `seastamp` instead of the R-built summaries published as
@@ -21,6 +22,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Pressure pages and the NRT vs CORA comparison pages.
 - Four sections from every summary page: "Profile level QC flags", "Location Filtering",
   "Duplicate Profiles Within Platforms" and "Duplicate Profiles Across Platforms".
+
+### Fixed
+- The navbar title linked to the AIQC portal instead of this site's home page, so nothing in the
+  menu bar led back to the index. Quarto folds the logo and the title into a single brand link,
+  which `logo-href` then claimed in full; Distill kept the two apart. The title is now an ordinary
+  nav item pointing at `index.qmd`, and the logo keeps the portal link and gains `AIQC` alt text
+  (it had none, and the image is white on transparent).
 
 
 ## [0.2.2] - 2025-11-17
