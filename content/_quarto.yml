@@ -1,0 +1,93 @@
+# Quarto reuses a page's computed output until the page changes, so a rebuild
+# after an unrelated edit costs seconds instead of minutes. What it hashes is
+# the .qmd alone, and almost all of our logic lives elsewhere -- reportlib and
+# _func/ -- so build.sh stamps those in and clears _freeze/ when they move.
+execute:
+  freeze: auto
+
+project:
+  type: website
+  output-dir: docs
+  render:
+  - '*.qmd'
+  resources:
+  - images/**
+website:
+  title: Mediterranean Sea
+  description: 'Summary Report of Mediterranean Sea In Situ Observations
+
+    '
+  navbar:
+    logo: images/logo.png
+    logo-href: https://aiqc-hub.github.io/aiqc-report/
+    logo-alt: "AIQC"
+    # Quarto folds the site title into the same brand link as the logo, so with
+    # logo-href set the title pointed at the portal too and nothing led home.
+    # Distill kept them apart: logo -> portal, title -> index. Suppress the
+    # brand title and put it back as an ordinary left-hand nav item.
+    title: false
+    left:
+    - text: "Mediterranean Sea"
+      href: index.qmd
+    tools:
+    - icon: github
+      href: https://github.com/AIQC-Hub/med-report
+      text: "Source on GitHub"
+    right:
+    - text: Profile Summary
+      menu:
+      - text: Summary (MO)
+        href: mo_summary.qmd
+      - text: Summary (GL)
+        href: mo_gl_summary.qmd
+      - text: Summary (CORA)
+        href: mo_cora_summary.qmd
+    - text: Pressure
+      menu:
+      - text: Pres (MO)
+        href: mo_pres.qmd
+      - text: Pres (GL)
+        href: mo_gl_pres.qmd
+      - text: Pres (CORA)
+        href: mo_cora_pres.qmd
+      - text: '---'
+      - text: Pres QC (MO)
+        href: mo_pres_qc.qmd
+      - text: Pres QC (GL)
+        href: mo_gl_pres_qc.qmd
+      - text: Pres QC (CORA)
+        href: mo_cora_pres_qc.qmd
+    - text: Temperature
+      menu:
+      - text: Temp (MO)
+        href: mo_temp.qmd
+      - text: Temp (GL)
+        href: mo_gl_temp.qmd
+      - text: Temp (CORA)
+        href: mo_cora_temp.qmd
+      - text: '---'
+      - text: Temp QC (MO)
+        href: mo_temp_qc.qmd
+      - text: Temp QC (GL)
+        href: mo_gl_temp_qc.qmd
+      - text: Temp QC (CORA)
+        href: mo_cora_temp_qc.qmd
+    - text: Salinity
+      menu:
+      - text: Psal (MO)
+        href: mo_psal.qmd
+      - text: Psal (GL)
+        href: mo_gl_psal.qmd
+      - text: Psal (CORA)
+        href: mo_cora_psal.qmd
+      - text: '---'
+      - text: Psal QC (MO)
+        href: mo_psal_qc.qmd
+      - text: Psal QC (GL)
+        href: mo_gl_psal_qc.qmd
+      - text: Psal QC (CORA)
+        href: mo_cora_psal_qc.qmd
+format:
+  html:
+    toc: true
+    toc-depth: 2
